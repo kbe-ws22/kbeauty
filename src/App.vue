@@ -24,19 +24,25 @@ import { RouterLink, RouterView } from "vue-router";
       </div>
       <nav>
         <RouterLink to="/about">Profile</RouterLink>
-        <RouterLink to="/about">Cart</RouterLink>
+        <RouterLink to="/cart">Cart</RouterLink>
       </nav>
     </div>
   </header>
-  
+
+  <div><p>für testen</p>
+      <RouterLink to="/products">-> Products </RouterLink>
+      <RouterLink to="/cart">| -> Cart</RouterLink>
+  </div>
+
   <RouterView/>
 
+  <!-- TODO links im footer-->
   <footer>
     <div class="footer">
       <RouterLink class="footer_items" to="/">Home</RouterLink>
-      <RouterLink class="footer_items" to="/about">Impressum</RouterLink>
-      <RouterLink class="footer_items" to="/about">Team</RouterLink>
-      <RouterLink class="footer_items" to="/about">Help</RouterLink>
+      <RouterLink class="footer_items" to="/impressum">Impressum</RouterLink>
+      <RouterLink class="footer_items" to="/team">Team</RouterLink>
+      <RouterLink class="footer_items" to="/help">Help</RouterLink>
     </div>
     @[kbe]auty
   </footer>
