@@ -1,5 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import Cart from "./components/icons/Cart.vue";
+import Profile from "./components/icons/Profile.vue";
+
 </script>
 
 <template>
@@ -10,21 +13,23 @@ import { RouterLink, RouterView } from "vue-router";
       </nav>
     </div>
     <!-- TODO Logo zentrieren-->
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="35"
-      height="35"
-    />
+    <a href="/">
+      <img
+        class="logo"
+        src="https://via.placeholder.com/400x250/e5f8e5/134313g"
+        width="120"
+        height="50"
+      />
+    </a>
 
     <div class="right">
       <div class="searchbar">
-        <input type="text"/>
+        <input type="text" placeholder="Search.."/>
       </div>
+      <!-- TODO LINKS-->
       <nav>
-        <RouterLink to="/about">Profile</RouterLink>
-        <RouterLink to="/cart">Cart</RouterLink>
+        <RouterLink to="/profile"> PROFILE </RouterLink>
+        <RouterLink to="/cart"> CART </RouterLink>
       </nav>
     </div>
   </header>
