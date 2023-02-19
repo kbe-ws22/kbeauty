@@ -1,6 +1,7 @@
 $grey-light: #d3d3d3;
 $grey-dark: #696969;
 $white: white;
+$black: #000000;
 
 *,
 *::before,
@@ -13,4 +14,16 @@ $white: white;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: 15px;
+  color: $black;
+}
+
+h1{
+  font-size: 25px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+p{
+  font-size: 13px;
+  margin-bottom: 10px;
 }
