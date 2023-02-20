@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as s,a as _}from"./index-fcd6d50c.js";const c={},o={class:"products"},a=_("h1",null,"This is a cart page",-1),n=[a];function r(i,d){return t(),s("div",o,n)}const p=e(c,[["render",r]]);export{p as default};
