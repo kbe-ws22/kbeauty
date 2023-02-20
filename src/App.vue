@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import Menu from "./components/Menu.vue";
+import CartItem from "./components/CartItem.vue";
 
 </script>
 
@@ -37,6 +38,7 @@ import Menu from "./components/Menu.vue";
       <RouterLink to="/about">| -> About</RouterLink>
   </div>
 
+  <CartItem name="Tester" price="10.99" amount="3"/>
   <RouterView/>
 
   <!-- TODO links im footer-->
