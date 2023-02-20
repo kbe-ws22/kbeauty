@@ -1,16 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import Cart from "./components/icons/Cart.vue";
-import Profile from "./components/icons/Profile.vue";
+import Menu from "./components/Menu.vue";
 
 </script>
 
 <template>
   <header>
     <div class="left">
-      <nav>
-        Menu
-      </nav>
+      <Menu />
     </div>
     <!-- TODO Logo zentrieren-->
     <a href="/">
@@ -37,6 +34,7 @@ import Profile from "./components/icons/Profile.vue";
   <div><p>für testen</p>
       <RouterLink to="/products">-> Products </RouterLink>
       <RouterLink to="/cart">| -> Cart</RouterLink>
+      <RouterLink to="/about">| -> About</RouterLink>
   </div>
 
   <RouterView/>

@@ -11,7 +11,7 @@ header, footer{
   width: 100%;
   position: fixed;
   background-color: $white;
-  height: 25px;
+  height: auto;
 }
 
 header{
@@ -20,7 +20,7 @@ header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 10px;
+  z-index: 5;
 
   input[type="text"]{
     border-radius: 25px;
@@ -32,12 +32,51 @@ header{
 }
 
 footer{
+  z-index: 4;
   bottom: 0;
   left: 0;
   text-align: center;
 
   .footer_items{
     margin: 1em;
+  }
+}
+
+/* menu */
+//TODO transition
+.menu_btn{
+  font-size: 25px;
+  padding-left: 25px;
+}
+
+.menu{
+  z-index: 10;
+
+  nav{
+    display: none;
+    margin-top: -60px;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    background-color: $white;
+    border-right: 1px solid $grey-light;
+    overflow: auto;
+    padding: 25px;
+    padding-top: 15px;
+
+    .menu_item{
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      text-align: left;
+      letter-spacing: 0.35em;
+      padding-left: 10px;
+      display: block; //FIXME -> cause of why hover is the whole line
+    }
+
+    p.menu_item{
+      text-align: right;
+      letter-spacing: 0;
+    }
   }
 }
 
