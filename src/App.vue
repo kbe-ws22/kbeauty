@@ -2,7 +2,6 @@
 import { RouterLink, RouterView } from "vue-router";
 import Menu from "./components/Menu.vue";
 import CartItem from "./components/CartItem.vue";
-
 </script>
 
 <template>
@@ -26,8 +25,12 @@ import CartItem from "./components/CartItem.vue";
       </div>
       <!-- TODO LINKS-->
       <nav>
-        <RouterLink to="/profile"> PROFILE </RouterLink>
-        <RouterLink to="/cart"> CART </RouterLink>
+        <RouterLink to="/profile">
+          <font-awesome-icon icon="fa-solid fa-user-circle" />
+        </RouterLink>
+        <RouterLink to="/cart">
+          <font-awesome-icon icon="fa-solid fa-shopping-cart" />
+        </RouterLink>
       </nav>
     </div>
   </header>
@@ -38,7 +41,8 @@ import CartItem from "./components/CartItem.vue";
       <RouterLink to="/about">| -> About</RouterLink>
   </div>
 
-  <CartItem name="Tester" price="10.99" amount="3"/>
+  <CartItem name="Tester" price="10,99" amount="3" img="https://via.placeholder.com/400x250/e5f8e5/134313"/>
+  
   <RouterView/>
 
   <!-- TODO links im footer-->

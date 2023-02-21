@@ -1,0 +1,27 @@
+@import '../base.scss';
+
+.cartItem{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  gap: 15px;
+
+  .cartItem_img{
+    width: 100px;
+    height: 70px;
+    background-color: aliceblue;
+  }
+
+  .cartItem_options{
+    position: absolute;
+    right: 0;
+
+    input[type="number"]{
+      text-align: center;
+      width: 50px;
+      margin-right: 15px;
+      padding-right: 0;
+    }
+  }
+}

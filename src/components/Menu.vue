@@ -29,5 +29,5 @@ function closeNav(){
 </template>
 
 <style lang="scss">
-@import 'src/assets/homepage.scss'
+@import 'src/assets/scss/homepage.scss'
 </style>

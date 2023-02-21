@@ -1,3 +1,5 @@
+<!-- endpoint: /products -->
+
 <template>
   <div class="products">
     <h1>This is a products page</h1>
