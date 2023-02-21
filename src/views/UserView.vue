@@ -12,7 +12,11 @@ export default {
 </script>
 
 <template>
-  <div id="user">
+  <div class="user">
+     <h1> User Page / Login / Register?</h1>
+     <h2> You are currently logged in as: </h2>
+  </div>
+  <!--<div id="user">
     <h2>You are currently logged in as: {{keycloak.idTokenParsed.preferred_username}}</h2>
     <div id="logout-container">
       <button class="btn" @click="keycloak.logout()">Logout</button>
@@ -33,7 +37,7 @@ export default {
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style>
