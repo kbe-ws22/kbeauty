@@ -22,8 +22,10 @@ header{
   justify-content: space-between;
   z-index: 5;
 
+  //TODO symbol ::before input text
   input[type="text"]{
     border-radius: 25px;
+    width: 150px;
   }
 }
 
@@ -93,5 +95,3 @@ a{
     color: $white;
   }
 }
-
-

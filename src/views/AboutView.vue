@@ -1,3 +1,4 @@
+<!-- endpoint: /about -->
 <script>
 export default {
   name: 'app',
