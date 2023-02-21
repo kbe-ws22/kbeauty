@@ -41,7 +41,7 @@ var slideIndex = 0;
       <span class="arrow" @click=showSlide(1)>&#10095;</span>
     </div>
 
-    <button class="dot-filled white"> Shop Now </button>
+    <RouterLink to="/products"><button class="dot-filled white"> Shop Now </button></RouterLink>
     
   </div>
 </template>

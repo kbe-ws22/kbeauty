@@ -17,7 +17,7 @@ keycloak.init({ onLoad: initOptions.onLoad }).then((auth) => {
     Vue.$log.info("Authenticated");
 
     new Vue({
-      el: '#app1', //#app
+      el: '#user', //#app
       render: h => h(App, { props: { keycloak: keycloak } })
     })
   }

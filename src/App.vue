@@ -34,14 +34,6 @@ import CartItem from "./components/CartItem.vue";
       </nav>
     </div>
   </header>
-
-  <div><p>für testen</p>
-      <RouterLink to="/products">-> Products </RouterLink>
-      <RouterLink to="/cart">| -> Cart</RouterLink>
-      <RouterLink to="/about">| -> About</RouterLink>
-  </div>
-
-  <CartItem name="Tester" price="10,99" amount="3" img="https://via.placeholder.com/400x250/e5f8e5/134313"/>
   
   <RouterView/>
 
