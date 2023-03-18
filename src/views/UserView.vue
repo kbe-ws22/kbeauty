@@ -1,20 +1,20 @@
 <!-- endpoint: /about -->
 <script>
 export default {
-  name: 'user',
-  props: ['keycloak'],
-  data () {
+  name: "user",
+  props: ["keycloak"],
+  data() {
     return {
-      msg: 'Welcome to KBEauty Web-Shop'
-    }
-  }
-}
+      msg: "Welcome to KBEauty Web-Shop",
+    };
+  },
+};
 </script>
 
 <template>
   <div class="user">
-     <h1> User Page / Login / Register?</h1>
-     <h2> You are currently logged in as: </h2>
+    <h1>User Page / Login / Register?</h1>
+    <h2>You are currently logged in as:</h2>
   </div>
   <!--<div id="user">
     <h2>You are currently logged in as: {{keycloak.idTokenParsed.preferred_username}}</h2>
@@ -40,5 +40,4 @@ export default {
   </div> -->
 </template>
 
-<style>
-</style>
+<style></style>
