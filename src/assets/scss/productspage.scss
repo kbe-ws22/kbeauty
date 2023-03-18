@@ -1,0 +1,18 @@
+@import '../base.scss';
+
+.products{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.catalogItem{
+  margin: 30px auto;
+  text-align: center;
+
+  .catalogItem_img{
+    width: 140px;
+    height: 200px;
+    background-color: aliceblue;
+  }
+}

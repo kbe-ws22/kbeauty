@@ -6,7 +6,7 @@ defineProps({
   },
   price: {
     type: Number,
-    required: true,   
+    required: true,
   },
   amount: {
     type: Number,
@@ -15,10 +15,10 @@ defineProps({
   img: {
     type: String,
     required: true,
-  }
+  },
 });
 
-function deleteItem(n){
+function deleteItem(n) {
   alert(n + " deletion needs implementation");
 }
 </script>
@@ -29,12 +29,12 @@ function deleteItem(n){
       <!-- FIXME <img :src=require({img})/> -->
     </div>
     <div class="cartItem_content">
-      <h3>{{name}}</h3>
-      <p>{{price}} €</p>
+      <h3>{{ name }}</h3>
+      <p>{{ price }} €</p>
     </div>
     <div class="cartItem_options">
       <!-- FIXME value + deleteItem -->
-      <input type="number" value={{amount}} min="0" max="10">
+      <input type="number" value="{{amount}}" min="0" max="10" />
       <span @click="deleteItem(name)">
         <font-awesome-icon icon="fa-solid fa-trash-can" />
       </span>
@@ -43,5 +43,5 @@ function deleteItem(n){
 </template>
 
 <style lang="scss">
-@import 'src/assets/scss/cartpage.scss'
+@import "src/assets/scss/cartpage.scss";
 </style>
