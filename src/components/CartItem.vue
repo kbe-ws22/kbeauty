@@ -24,15 +24,15 @@ function deleteItem(n) {
 </script>
 
 <template>
-  <div class="cartItem">
-    <div class="cartItem_img">
+  <div class="cart-item">
+    <div class="cart-item_img">
       <!-- FIXME <img :src=require({img})/> -->
     </div>
-    <div class="cartItem_content">
+    <div>
       <h3>{{ name }}</h3>
       <p>{{ price }} €</p>
     </div>
-    <div class="cartItem_options">
+    <div class="cart-item_options">
       <!-- FIXME value + deleteItem -->
       <input type="number" value="{{amount}}" min="0" max="10" />
       <span @click="deleteItem(name)">

@@ -4,7 +4,10 @@ import CatalogItem from "../components/CatalogItem.vue";
 </script>
 
 <template>
-  <div class="products">
+  <div class="catalog_header">
+
+  </div>
+  <div class="catalog">
     <CatalogItem
       id="1"
       name="Test Product"

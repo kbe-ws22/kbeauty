@@ -1,16 +1,16 @@
 @import '../base.scss';
 
-.products{
+.catalog{
     display: grid;
     align-items: center;
     grid-template-columns: 25% 25% 25% 25%;
 }
 
-.catalogItem{
+.catalog-item{
   margin: 30px auto;
   text-align: center;
 
-  .catalogItem_img{
+  .catalog-item_img{
     width: 140px;
     height: 200px;
     background-color: aliceblue;

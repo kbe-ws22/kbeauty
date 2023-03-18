@@ -1,19 +1,19 @@
 @import '../base.scss';
 
-.cartItem{
+.cart-item{
   display: flex;
   width: 100%;
   align-items: center;
   position: relative;
   gap: 15px;
 
-  .cartItem_img{
+  .cart-item_img{
     width: 100px;
     height: 70px;
     background-color: aliceblue;
   }
 
-  .cartItem_options{
+  .cart-item_options{
     position: absolute;
     right: 0;
 

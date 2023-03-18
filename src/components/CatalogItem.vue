@@ -20,11 +20,11 @@ defineProps({
 </script>
 
 <template>
-  <div class="catalogItem" @click="$router.push('/products/' + id)">
-    <div class="catalogItem_img">
+  <div class="catalog-item" @click="$router.push('/products/' + id)">
+    <div class="catalog-item_img">
       <!-- FIXME <img :src=require({img})/> -->
     </div>
-    <div class="catalogItem_content">
+    <div class="catalog-item_content">
       <h3>{{ name }}</h3>
       <p>{{ price }} €</p>
     </div>
