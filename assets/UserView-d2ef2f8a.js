@@ -1,0 +1,1 @@
+import{_ as s,o,c as t,a as e}from"./index-e7e93ac6.js";const r={name:"user",props:["keycloak"],data(){return{msg:"Welcome to KBEauty Web-Shop"}}},a={class:"user"},c=e("h1",null,"User Page / Login / Register?",-1),n=e("h2",null,"You are currently logged in as:",-1),_=[c,n];function i(l,d,u,p,h,m){return o(),t("div",a,_)}const g=s(r,[["render",i]]);export{g as default};
