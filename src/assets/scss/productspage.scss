@@ -1,5 +1,10 @@
 @import '../base.scss';
 
+.catalog-header{
+    text-align: center;
+    margin: 40px auto;
+}
+
 .catalog{
     display: grid;
     align-items: center;
@@ -7,12 +12,13 @@
 }
 
 .catalog-item{
-  margin: 30px auto;
+  margin: 0 auto 20px auto;
   text-align: center;
 
   .catalog-item_img{
     width: 140px;
     height: 200px;
     background-color: aliceblue;
+    margin-bottom: 10px;
   }
 }

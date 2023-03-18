@@ -4,8 +4,9 @@ import CatalogItem from "../components/CatalogItem.vue";
 </script>
 
 <template>
-  <div class="catalog_header">
-
+  <div class="catalog-header">
+    <h1>Catalog</h1>
+    <p>Discover our exclusive products for your new 8-step skincare regime.</p>
   </div>
   <div class="catalog">
     <CatalogItem
