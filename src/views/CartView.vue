@@ -6,21 +6,21 @@ let itemsA = [
   {
       id: 1,
       name: "Exfoliator",
-      price: "10,99",
+      price: 10.99,
       amount: 1,
       img: "https://via.placeholder.com/400x250/e5f8e5/134313",
     },
     {
       id: 2,
       name: "Face Wash",
-      price: "10,99",
+      price: 10.99,
       amount: 2,
       img: "https://via.placeholder.com/400x250/e5f8e5/134313",
     },
     {
       id: 3,
       name: "Toner",
-      price: "10,99",
+      price: 10.99,
       amount: 3,
       img: "https://via.placeholder.com/400x250/e5f8e5/134313",
     }
@@ -64,9 +64,10 @@ export default {
 <template>
   <div class="cart">
     <h1>This is a cart page</h1>
-    <div v-if="0 < items.length ">
+    <div v-if="0 < items.length">
       <CartItem v-for="item in items"
-      @deleteItem="deleteItem(item.name)" @amountChanged="(amount) => updateAmount(item.name, amount)"
+        @deleteItem="deleteItem(item.name)"
+        @amountChanged="(amount) => updateAmount(item.name, amount)"
         :id="item.id"
         :name ="item.name"
         :price="item.price"
