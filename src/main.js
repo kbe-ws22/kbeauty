@@ -16,7 +16,7 @@ import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 library.add(faCartShopping, faUserCircle, faTrashCan, farTrashCan);
 
 /* mount to app*/
-const app = createApp(App);
-app.component("font-awesome-icon", FontAwesomeIcon);
-app.use(router);
-app.mount("#app");
+createApp(App)
+.component("font-awesome-icon", FontAwesomeIcon)
+.use(router)
+.mount("#app");

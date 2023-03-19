@@ -78,6 +78,9 @@ footer{
     p.menu_item{
       text-align: right;
       letter-spacing: 0;
+      &:hover {
+        cursor: pointer;
+      };
     }
   }
 }
