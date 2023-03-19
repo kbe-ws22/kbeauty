@@ -6,6 +6,8 @@
 }
 
 .catalog{
+    width: 80%;
+    margin: auto;
     display: grid;
     align-items: center;
     grid-template-columns: 25% 25% 25% 25%;
@@ -14,6 +16,12 @@
 .catalog-item{
   margin: 0 auto 20px auto;
   text-align: center;
+  padding: 30px;
+  transition: transform .25s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.07);
+  }
 
   .catalog-item_img{
     width: 140px;

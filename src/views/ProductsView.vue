@@ -1,6 +1,57 @@
 <!-- endpoint: /products -->
 <script setup>
 import CatalogItem from "../components/CatalogItem.vue";
+
+var products = [
+  {
+    id: 1,
+    name: "Exfoliator",
+    price: 12.99,
+    img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+  },
+  {
+    id: 2,
+    name: "Face Wash",
+    price: 10.99,
+    img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+  },
+  {
+    id: 3,
+    name: "Toner",
+    price: 8.99,
+    img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+  },
+  {
+    id: 4,
+    name: "Serum",
+    price: 11.99,
+    img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+  },
+  {
+    id: 5,
+    name: "Essence",
+    price: 12.99,
+    img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+  },
+  {
+    id: 6,
+    name: "Face Oil",
+    price: 15.99,
+    img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+  },
+  {
+    id: 7,
+    name: "Moisturizer",
+    price: 10.99,
+    img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+  },
+  {
+    id: 8,
+    name: "Sunscreen",
+    price: 8.99,
+    img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+  },
+]
 </script>
 
 <template>
@@ -10,52 +61,11 @@ import CatalogItem from "../components/CatalogItem.vue";
   </div>
   <div class="catalog">
     <CatalogItem
-      id="1"
-      name="Test Product"
-      price="10,99"
-      img="https://via.placeholder.com/400x250/e5f8e5/134313"
-    />
-    <CatalogItem
-      id="1"
-      name="Test Product"
-      price="20,99"
-      img="https://via.placeholder.com/400x250/e5f8e5/134313"
-    />
-    <CatalogItem
-      id="1"
-      name="Test Product"
-      price="8,99"
-      img="https://via.placeholder.com/400x250/e5f8e5/134313"
-    />
-    <CatalogItem
-      id="1"
-      name="Test Product"
-      price="15,99"
-      img="https://via.placeholder.com/400x250/e5f8e5/134313"
-    />
-    <CatalogItem
-      id="1"
-      name="Test Product"
-      price="4,99"
-      img="https://via.placeholder.com/400x250/e5f8e5/134313"
-    />
-    <CatalogItem
-      id="1"
-      name="Test Product"
-      price="7,99"
-      img="https://via.placeholder.com/400x250/e5f8e5/134313"
-    />
-    <CatalogItem
-      id="1"
-      name="Test Product"
-      price="24,99"
-      img="https://via.placeholder.com/400x250/e5f8e5/134313"
-    />
-    <CatalogItem
-      id="1"
-      name="Test Product"
-      price="9,99"
-      img="https://via.placeholder.com/400x250/e5f8e5/134313"
+      v-for="product in products"
+      :id="product.id"
+      :name="product.name"
+      :price="product.price"
+      :img="product.img"
     />
   </div>
 </template>
