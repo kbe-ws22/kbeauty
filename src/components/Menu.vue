@@ -48,14 +48,19 @@
   <div class="menu">
     <nav id="menu_sidebar">
       <p class="menu_item menu_btn" @click="closeNav">&times;</p>
-      <RouterLink to="/products/" class="menu_item">
-        All</RouterLink
+      <RouterLink
+        to="/products"
+        class="menu_item"
       >
+        All
+      </RouterLink>
       <RouterLink
         v-for="product in products"
-        to="/products/" class="menu_item">
-        {{ product.name }}</RouterLink
+        :to="'/products/'+ product.id"
+        class="menu_item"
       >
+        {{ product.name }}
+      </RouterLink>
     </nav>
   </div>
 </template>
