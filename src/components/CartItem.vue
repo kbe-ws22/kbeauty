@@ -48,7 +48,7 @@ const changeAmount = (event) => {
       <!-- FIXME: if you type in number it'll go above max value-->
       <input @change="changeAmount($event)" type="number" min="0" max="10" />
       <span @click="clickDelete">
-        <font-awesome-icon icon="fa-solid fa-trash-can" />
+        <font-awesome-icon class="icon" icon="fa-solid fa-trash-can" />
       </span>
     </div>
   </div>

@@ -22,15 +22,18 @@ header{
   justify-content: space-between;
   z-index: 5;
 
-  //TODO symbol ::before input text
-  input[type="text"]{
+  /*input[type="text"]{
     border-radius: 25px;
     width: 150px;
-  }
+  }*/
 }
 
 .right{
   display: flex;
+
+  .nav-icon{
+    margin: 10px 20px 0 0;
+  }
 }
 
 footer{
@@ -75,6 +78,11 @@ footer{
       display: block; //FIXME -> cause of why hover is the whole line
     }
 
+    .menu_item:hover:not(:first-child){
+      background-color: $grey-dark;
+      color: white;
+    }
+
     p.menu_item{
       text-align: right;
       letter-spacing: 0;
@@ -89,9 +97,9 @@ a{
   transition: 0.4s;
 }
 
-@media (hover: hover) {
+/*@media (hover: hover) {
   a:hover {
     background-color: $grey-dark;
     color: $white;
   }
-}
+}*/
