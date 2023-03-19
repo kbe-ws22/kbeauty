@@ -78,10 +78,5 @@ export default {
     <div v-else>
       <h2>your cart is empty</h2>
     </div>
-    <!-- TODO löschen-->
-    <p> LÖSCHEN </p>
-    <div v-for="item in items">
-      <p>{{item.name}}: {{item.amount}}</p>
-    </div>
   </div>
 </template>
