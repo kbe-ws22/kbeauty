@@ -1,5 +1,11 @@
 <script setup>
+const emit = defineEmits( ['deleteItem'], ['amountChanged']);
+
 defineProps({
+  id: {
+    type: Number,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -18,8 +24,13 @@ defineProps({
   },
 });
 
-function deleteItem(n) {
-  alert(n + " deletion needs implementation");
+const clickDelete = () => {
+  emit('deleteItem')
+}
+
+const changeAmount = (event) => {
+  let value = event.target.value
+  emit('amountChanged', value);
 }
 </script>
 
@@ -33,9 +44,10 @@ function deleteItem(n) {
       <p>{{ price }} €</p>
     </div>
     <div class="cart-item_options">
-      <!-- FIXME value + deleteItem -->
-      <input type="number" value="{{amount}}" min="0" max="10" />
-      <span @click="deleteItem(name)">
+      <!-- TODO value-->
+      <!-- FIXME: if you type in number it'll go above max value-->
+      <input @change="changeAmount($event)" type="number" min="0" max="10" />
+      <span @click="clickDelete">
         <font-awesome-icon icon="fa-solid fa-trash-can" />
       </span>
     </div>
