@@ -17,6 +17,9 @@ $icon-menu-toggle: &#9776;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: 15px;
+  //color: $grey-dark;
+}
+h1, h3, p {
   color: $grey-dark;
 }
 
@@ -40,8 +43,12 @@ input[type="text"], input[type="number"]{
   border: 1px solid $grey-dark;
   padding: 0 15px;
 }
-//TODO hover of icon links button
-/*
-[icon^="fa-"]{
-  color: $grey-light;
-}*/
+
+.icon{
+  font-size: 20px;
+  color: $grey-dark;
+
+  &:hover{
+    color: $grey-light;
+  }
+}

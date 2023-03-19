@@ -8,24 +8,22 @@ import Menu from "./components/Menu.vue";
     <div class="left">
       <Menu />
     </div>
-    <!-- TODO Logo zentrieren-->
-    <a href="/">
+    <RouterLink to="/">
       <img
         alt="logo"
         src="https://via.placeholder.com/400x250/e5f8e5/134313g"
         width="120"
         height="50"
       />
-    </a>
+    </RouterLink>
 
     <div class="right">
-      <!-- TODO LINKS-->
       <nav>
         <RouterLink to="/profile">
-          <font-awesome-icon icon="fa-solid fa-user-circle" />
+          <font-awesome-icon class="icon nav-icon" icon="fa-solid fa-user-circle"/>
         </RouterLink>
         <RouterLink to="/cart">
-          <font-awesome-icon icon="fa-solid fa-shopping-cart" />
+          <font-awesome-icon class="icon nav-icon" icon="fa-solid fa-shopping-cart" />
         </RouterLink>
       </nav>
     </div>
@@ -33,7 +31,6 @@ import Menu from "./components/Menu.vue";
 
   <RouterView />
 
-  <!-- TODO links im footer-->
   <footer>
     <div class="footer">
       <RouterLink class="footer_items" to="/">Home</RouterLink>
