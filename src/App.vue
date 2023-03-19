@@ -8,14 +8,14 @@ import Menu from "./components/Menu.vue";
     <div class="left">
       <Menu />
     </div>
-    <a href="/">
+    <RouterLink to="/">
       <img
         alt="logo"
         src="https://via.placeholder.com/400x250/e5f8e5/134313g"
         width="120"
         height="50"
       />
-    </a>
+    </RouterLink>
 
     <div class="right">
       <nav>
