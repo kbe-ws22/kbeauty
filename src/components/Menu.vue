@@ -1,23 +1,46 @@
 <script setup>
-var menu_options = [
-  "All",
-  "Essence",
-  "Face Wash",
-  "Face Oil",
-  "Face Peeling",
-  "Face Mask",
-  "Serum",
-  "Sunscreen",
-  "Toner",
-];
-// aus /products holen vielleicht?
-function openNav() {
-  document.getElementById("menu_sidebar").style.display = "block";
-}
+  var products = [
+    {
+      id: 1,
+      name: "Exfoliator",
+    },
+    {
+      id: 2,
+      name: "Face Wash",
+    },
+    {
+      id: 3,
+      name: "Toner",
+    },
+    {
+      id: 4,
+      name: "Serum",
+    },
+    {
+      id: 5,
+      name: "Essence",
+    },
+    {
+      id: 6,
+      name: "Face Oil",
+    },
+    {
+      id: 7,
+      name: "Moisturizer",
+    },
+    {
+      id: 8,
+      name: "Sunscreen",
+    },
+  ]
 
-function closeNav() {
-  document.getElementById("menu_sidebar").style.display = "none";
-}
+  function openNav() {
+    document.getElementById("menu_sidebar").style.display = "block";
+  }
+
+  function closeNav() {
+    document.getElementById("menu_sidebar").style.display = "none";
+  }
 </script>
 
 <template>
@@ -26,31 +49,12 @@ function closeNav() {
     <nav id="menu_sidebar">
       <p class="menu_item menu_btn" @click="closeNav">&times;</p>
       <RouterLink to="/products/" class="menu_item">
-        {{ menu_options[0] }}</RouterLink
+        All</RouterLink
       >
-      <RouterLink to="/products/1" class="menu_item">
-        {{ menu_options[1] }}</RouterLink
-      >
-      <RouterLink to="/products/1" class="menu_item">
-        {{ menu_options[2] }}</RouterLink
-      >
-      <RouterLink to="/products/1" class="menu_item">
-        {{ menu_options[3] }}</RouterLink
-      >
-      <RouterLink to="/products/1" class="menu_item">
-        {{ menu_options[4] }}</RouterLink
-      >
-      <RouterLink to="/products/1" class="menu_item">
-        {{ menu_options[5] }}</RouterLink
-      >
-      <RouterLink to="/products/1" class="menu_item">
-        {{ menu_options[6] }}</RouterLink
-      >
-      <RouterLink to="/products/1" class="menu_item">
-        {{ menu_options[7] }}</RouterLink
-      >
-      <RouterLink to="/products/1" class="menu_item">
-        {{ menu_options[8] }}</RouterLink
+      <RouterLink
+        v-for="product in products"
+        to="/products/" class="menu_item">
+        {{ product.name }}</RouterLink
       >
     </nav>
   </div>
