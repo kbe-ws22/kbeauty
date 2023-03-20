@@ -9,14 +9,21 @@ import {
   faCartShopping,
   faUserCircle,
   faTrashCan as farTrashCan,
+  faChevronLeft as leftIcon,
 } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 /* specific icons  */
-library.add(faCartShopping, faUserCircle, faTrashCan, farTrashCan);
+library.add(
+  faCartShopping,
+  faUserCircle,
+  faTrashCan,
+  farTrashCan,
+  leftIcon
+);
 
 /* mount to app*/
 createApp(App)
-.component("font-awesome-icon", FontAwesomeIcon)
-.use(router)
-.mount("#app");
+  .component("font-awesome-icon", FontAwesomeIcon)
+  .use(router)
+  .mount("#app");

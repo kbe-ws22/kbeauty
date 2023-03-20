@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import ProductsView from "../views/ProductsView.vue";
+import CatalogView from "../views/CatalogView.vue";
 import CartView from "../views/CartView.vue";
 import UserView from "../views/UserView.vue";
+import ProductView from "../views/ProductView.vue";
 
 const routes = [
   {
@@ -17,19 +18,29 @@ const routes = [
   },
   {
     path: "/products",
-    name: "products",
-    component: ProductsView,
+    name: "catalog",
+    component: CatalogView,
+  },
+  {
+    path: "/products/:id",
+    name: "product",
+    component: ProductView,
   },
   {
     path: "/cart",
     name: "cart",
     component: CartView,
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
+  routes,
+});
+
+// scroll back to top after routing
+router.beforeEach((to, from) => {
+  window.scrollTo(0, 0);
 });
 
 export default router;

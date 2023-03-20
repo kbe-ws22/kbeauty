@@ -51,7 +51,7 @@ var products = [
     price: 8.99,
     img: "https://via.placeholder.com/400x250/e5f8e5/134313",
   },
-]
+];
 </script>
 
 <template>
@@ -71,5 +71,5 @@ var products = [
 </template>
 
 <style lang="scss">
-@import "src/assets/scss/productspage.scss";
+@import "src/assets/scss/catalogpage.scss";
 </style>
