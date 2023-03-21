@@ -1,46 +1,46 @@
 <script setup>
-  var products = [
-    {
-      id: 1,
-      name: "Exfoliator",
-    },
-    {
-      id: 2,
-      name: "Face Wash",
-    },
-    {
-      id: 3,
-      name: "Toner",
-    },
-    {
-      id: 4,
-      name: "Serum",
-    },
-    {
-      id: 5,
-      name: "Essence",
-    },
-    {
-      id: 6,
-      name: "Face Oil",
-    },
-    {
-      id: 7,
-      name: "Moisturizer",
-    },
-    {
-      id: 8,
-      name: "Sunscreen",
-    },
-  ]
+var products = [
+  {
+    id: 1,
+    name: "Exfoliator",
+  },
+  {
+    id: 2,
+    name: "Face Wash",
+  },
+  {
+    id: 3,
+    name: "Toner",
+  },
+  {
+    id: 4,
+    name: "Serum",
+  },
+  {
+    id: 5,
+    name: "Essence",
+  },
+  {
+    id: 6,
+    name: "Face Oil",
+  },
+  {
+    id: 7,
+    name: "Moisturizer",
+  },
+  {
+    id: 8,
+    name: "Sunscreen",
+  },
+];
 
-  function openNav() {
-    document.getElementById("menu_sidebar").style.display = "block";
-  }
+function openNav() {
+  document.getElementById("menu_sidebar").style.display = "block";
+}
 
-  function closeNav() {
-    document.getElementById("menu_sidebar").style.display = "none";
-  }
+function closeNav() {
+  document.getElementById("menu_sidebar").style.display = "none";
+}
 </script>
 
 <template>
@@ -48,15 +48,10 @@
   <div class="menu">
     <nav id="menu_sidebar">
       <p class="menu_item menu_btn" @click="closeNav">&times;</p>
-      <RouterLink
-        to="/products"
-        class="menu_item"
-      >
-        All
-      </RouterLink>
+      <RouterLink to="/products" class="menu_item"> All </RouterLink>
       <RouterLink
         v-for="product in products"
-        :to="'/products/'+ product.id"
+        :to="'/products/' + product.id"
         class="menu_item"
       >
         {{ product.name }}

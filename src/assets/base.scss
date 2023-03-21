@@ -19,7 +19,7 @@ $icon-menu-toggle: &#9776;
   font-size: 15px;
   //color: $grey-dark;
 }
-h1, h3, p {
+h1, h2, h3, p {
   color: $grey-dark;
 }
 
@@ -29,6 +29,10 @@ h1{
   margin-bottom: 10px;
 }
 
+h2{
+  font-size: 16px;
+}
+
 h3{
   font-size: 14px;
   text-transform: uppercase;
@@ -36,7 +40,6 @@ h3{
 
 p{
   font-size: 13px;
-  margin-bottom: 10px;
 }
 
 input[type="text"], input[type="number"]{

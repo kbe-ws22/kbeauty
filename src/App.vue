@@ -20,10 +20,16 @@ import Menu from "./components/Menu.vue";
     <div class="right">
       <nav>
         <RouterLink to="/profile">
-          <font-awesome-icon class="icon nav-icon" icon="fa-solid fa-user-circle"/>
+          <font-awesome-icon
+            class="icon nav-icon"
+            icon="fa-solid fa-user-circle"
+          />
         </RouterLink>
         <RouterLink to="/cart">
-          <font-awesome-icon class="icon nav-icon" icon="fa-solid fa-shopping-cart" />
+          <font-awesome-icon
+            class="icon nav-icon"
+            icon="fa-solid fa-shopping-cart"
+          />
         </RouterLink>
       </nav>
     </div>
@@ -38,6 +44,6 @@ import Menu from "./components/Menu.vue";
       <RouterLink class="footer_items" to="/team">Team</RouterLink>
       <RouterLink class="footer_items" to="/help">Help</RouterLink>
     </div>
-    @[kbe]auty
+    <p>@[kbe]auty</p>
   </footer>
 </template>
