@@ -1,5 +1,15 @@
 @import '../base.scss';
+@mixin transition() {
+    transition: transform .2s;
 
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
 
 .back-container{
     display: inline-flex;
@@ -14,18 +24,8 @@
     p{
         margin: 0 10px;
     }
-}
 
-.back-container, .add-button{
-    transition: transform .2s;
-
-    &:hover {
-        cursor: pointer;
-    }
-
-    &:active {
-        transform: scale(0.95);
-    }
+    @include transition;
 }
 
 .grid-container{
@@ -75,6 +75,8 @@
                 &:hover{
                     background-color: lighten($color: $grey-dark, $amount: 10%); 
                 }
+
+                @include transition;
             }
         }
     }
