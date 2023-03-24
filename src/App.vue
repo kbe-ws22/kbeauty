@@ -10,10 +10,9 @@ import Menu from "./components/Menu.vue";
     </div>
     <RouterLink to="/">
       <img
+        id="logo"
         alt="logo"
-        src="https://via.placeholder.com/400x250/e5f8e5/134313g"
-        width="120"
-        height="50"
+        src="/public/logo.svg"
       />
     </RouterLink>
 
