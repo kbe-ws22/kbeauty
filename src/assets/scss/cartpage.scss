@@ -1,5 +1,23 @@
 @import '../base.scss';
 
+.cart{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-tab{
+  width: 60%;
+}
+
+.cart-summary{
+  width: 30%;
+
+  .cart-price_content{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .cart-item{
   display: flex;
   width: 100%;

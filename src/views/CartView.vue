@@ -1,5 +1,6 @@
 <script>
 import CartItem from "../components/CartItem.vue";
+
 //TODO api fetch 
 //TODO amount of child to parent
 let itemsA = [
@@ -54,6 +55,16 @@ export default {
         } else {
           this.items.find( item => item.name === name).amount = amount
         }
+      },
+      price(){
+        let value = 0;
+        for(let i = 0; i < this.items.length; i++){
+           value += (this.items[i].price * this.items[i].amount)
+        }
+        return value;
+      },
+      total(){
+        return this.price();
       }
     }/*,
     mounted(){
@@ -63,20 +74,45 @@ export default {
 </script>
 <template>
   <div class="cart">
-    <h1>This is a cart page</h1>
-    <div v-if="0 < items.length">
-      <CartItem v-for="item in items"
-        @deleteItem="deleteItem(item.name)"
-        @amountChanged="(amount) => updateAmount(item.name, amount)"
-        :id="item.id"
-        :name ="item.name"
-        :price="item.price"
-        :amount="item.amount"
-        :img="item.img"
-      />
+    <div class="cart-tab">
+      <h1> Shopping Cart </h1>
+      <hr>
+      <div class="cart-items">
+        <div v-if="0 < items.length">
+          <CartItem v-for="item in items"
+            @deleteItem="deleteItem(item.name)"
+            @amountChanged="(amount) => updateAmount(item.name, amount)"
+            :id="item.id"
+            :name ="item.name"
+            :price="item.price"
+            :amount="item.amount"
+            :img="item.img"
+          />
+        </div>
+        <div v-else>
+          <h2>your cart is empty</h2>
+        </div>
+      </div>
+      <hr>
     </div>
-    <div v-else>
-      <h2>your cart is empty</h2>
+    <div class="cart-summary">
+      <h1>Summary</h1>
+      <hr class="hor-line">
+      <div class="cart-price">
+        <div class="cart-price_content">
+          <p>SUBTOTAL</p>
+          <p> {{ this.price() }}</p>
+        </div>
+        <div class="cart-price_content">
+          <p>SHIPPING</p>
+          <p>FREE</p>
+        </div>
+      </div>
+      <hr class="hor-line">
+      <div class="cart-price_content">
+        <h1>TOTAL</h1>
+        <h1> {{ total() }} €</h1>
+      </div>
     </div>
   </div>
 </template>
