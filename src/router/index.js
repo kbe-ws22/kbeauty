@@ -1,15 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import CatalogView from "../views/CatalogView.vue";
-import CartView from "../views/CartView.vue";
-import UserView from "../views/UserView.vue";
-import ProductView from "../views/ProductView.vue";
+import CatalogView from "../views/Catalog.vue";
+import CartView from "../views/Cart.vue";
+import UserView from "../views/User.vue";
+import ProductView from "../views/Product.vue";
+import About from "../views/About.vue";
+import Team from "../views/Team.vue";
+import Impressum from "../views/Impressum.vue";
+import Home from "../views/Home.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: HomeView,
+    component: Home,
   },
   {
     path: "/profile",
@@ -31,6 +34,21 @@ const routes = [
     name: "cart",
     component: CartView,
   },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
+  },
+  {
+    path: "/team",
+    name: "Team",
+    component: Team,
+  },
+  {
+    path: "/impressum",
+    name: "Impressum",
+    component: Impressum,
+  }
 ];
 
 const router = createRouter({
