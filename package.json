@@ -18,15 +18,16 @@
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@mdi/font": "^7.2.96",
     "keycloak-js": "^20.0.3",
     "node-sass": "^8.0.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
-    "vuejs-logger": "1.5.5"
+    "vuetify": "^3.1.11"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
-    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue": "^4.1.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "cypress": "^12.0.2",
     "eslint": "^8.22.0",

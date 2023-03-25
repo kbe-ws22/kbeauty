@@ -16,7 +16,6 @@ var product = {
 };
 
 function backToGallery() {
-  console.log("hi");
   router.push({ name: "catalog" });
 }
 </script>
@@ -24,7 +23,7 @@ function backToGallery() {
 <template>
   <div class="back-container" @click="backToGallery">
     <font-awesome-icon class="back-icon" icon="fa-solid fa-chevron-left" />
-    <p>Back to catalog</p>
+    <p>All Products</p>
   </div>
   <div class="grid-container">
     <div class="grid-item-left">
