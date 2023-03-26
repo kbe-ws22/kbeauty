@@ -73,7 +73,7 @@
             to="/cart"
         ></v-btn>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer">
+    <v-navigation-drawer border=false elevation="0" v-model="drawer">
         <v-list>
             <v-list-item
                 v-for="item in items"
