@@ -6,17 +6,17 @@ import Footer from "./components/Footer.vue";
 
 <template>
   <v-app class="app">
-    <v-main>
-      <Header />
-      <router-view />
-      <Footer />
-    </v-main>
+    <Header />
+      <v-main>
+        <router-view />
+      </v-main>
+    <Footer />
   </v-app>
 </template>
 
 <style>
-.app {
-  width: 90%;
-  margin: 0 auto 10% auto;
+.v-main {
+  width: 80%;
+  margin: 0 auto 100px auto;
 }
 </style>

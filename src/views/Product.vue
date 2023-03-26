@@ -40,7 +40,7 @@ function backToGallery() {
       <div class="add-container">
         <div class="pricing">
           <h1>{{ product.price }} €</h1>
-          <p>{{ (product.price / product.size) * 100 }}/100ML</p>
+          <p>{{ (product.price / product.size) * 100 }}€/100ML</p>
         </div>
         <button class="add-button">Add To Cart</button>
       </div>

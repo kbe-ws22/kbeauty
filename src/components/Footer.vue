@@ -39,6 +39,6 @@
 .v-footer {
     bottom: 0;
     position: fixed;
-    width: 90%;
+    width: 100%;
 }
 </style>
