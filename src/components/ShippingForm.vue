@@ -7,103 +7,81 @@ export default {
     },
     data() {
         return {
-            rules: {
-                required: [value => !!value || "Required"]
-            },
-            formValues : {
-                firstName: this.formData ? this.formData.firstName : null,
-                lastName: this.formData ? this.formData.lastName : null,
-                address: this.formData ? this.formData.address : null,
-                country: this.formData ? this.formData.country : null,
-                city: this.formData ? this.formData.city : null,
-                zipCode: this.formData ? this.formData.zipCode : null,
-                phoneNumber: this.formData ? this.formData.phoneNumber : null,
-            }
+            rules: [
+                value => {
+                if (value) return true
+                return 'Required'
+            }],
+            firstName: '',
+            lastName: '',
+            address: '',
+            country: '',
+            city: '',
+            zipCode: '',
+            phoneNumber: '',
         }
     }
 }
 </script>
 
 <template>
-    <v-form v-model="valid" ref="shippingForm">
+    <v-form ref="shippingForm">
         <v-row>
             <v-col>
                 <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="shippingForm.validate()"
                     v-model="firstName"
-                    :rules="rules.required"
+                    :rules="rules"
                     label="First name"
-                    density="compact"
                 ></v-text-field>
             </v-col>
             <v-col>
                 <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="shippingForm.validate()"
                     v-model="lastName"
-                    :rules="rules.required"
+                    :rules="rules"
                     label="Last name"
-                    density="compact"
                 ></v-text-field>
             </v-col>
         </v-row>
         <v-row>
             <v-col>
                 <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="shippingForm.validate()"
                     v-model="address"
-                    :rules="rules.required"
+                    :rules="rules"
                     label="Address"
-                    density="compact"
                 ></v-text-field>
             </v-col>
         </v-row>
         <v-row>
             <v-col>
                 <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="shippingForm.validate()"
                     v-model="country"
-                    :rules="rules.required"
+                    :rules="rules"
                     label="Country"
-                    density="compact"
                 ></v-text-field>
             </v-col>
             <v-col>
                 <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="shippingForm.validate()"
                     v-model="city"
-                    :rules="rules.required"
+                    :rules="rules"
                     label="City"
-                    density="compact"
                 ></v-text-field>
             </v-col>
         </v-row>
         <v-row>
             <v-col>
                 <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="shippingForm.validate()"
                     v-model="zipCode"
-                    :rules="rules.required"
+                    :rules="rules"
                     label="Zip Code"
-                    counter="5"
                     type="number"
-                    density="compact"
                 ></v-text-field>
             </v-col>
             <v-col>
                 <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="shippingForm.validate()"
                     v-model="phoneNumber"
                     :rules="rules.required"
                     label="Phone Number"
                     type="number"
-                    density="compact"
                 ></v-text-field>
             </v-col>
         </v-row>

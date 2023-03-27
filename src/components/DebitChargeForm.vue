@@ -7,27 +7,25 @@ export default {
     },
     data() {
         return {
-            rules: {
-                required: [value => !!value || "Required"]
-            },
-            formValues : {
-                firstName: this.formData ? this.formData.name : null,
-                lastName: this.formData ? this.formData.iban : null,
-            }
+            rules: [
+                value => {
+                if (value) return true
+                return 'Required'
+            }],
+            name: '',
+            iban: ''
         }
     }
 }
 </script>
 
 <template>
-    <v-form v-model="valid" ref="debitChargeForm">
+    <v-form ref="debitChargeForm">
         <v-row class="mt-3">
             <v-col>
                 <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="debitChargeForm.validate()"
                     v-model="name"
-                    :rules="rules.required"
+                    :rules="rules"
                     label="Account Holder"
                     density="compact"
                 ></v-text-field>
@@ -36,10 +34,8 @@ export default {
         <v-row>
             <v-col>
                 <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="debitChargeForm.validate()"
                     v-model="iban"
-                    :rules="rules.required"
+                    :rules="rules"
                     label="IBAN"
                     density="compact"
                 ></v-text-field>

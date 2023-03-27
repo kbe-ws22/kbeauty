@@ -220,9 +220,9 @@ export default {
     </div>
 
     <div class="bottom_buttons">
-      <v-btn v-if="this.currentTab != 'payment_options'" color="primary" @click="onClickContinue()" variant="tonal" size="small" rounded="xl">Continue</v-btn>
-      <v-btn v-else color="primary" @click="$router.push('/confirmation')" variant="tonal" size="small" rounded="xl">Order Now</v-btn>
-      <v-btn class="ms-5" @click="$router.push('/')" variant="tonal" size="small" rounded="xl">Cancel</v-btn>
+      <v-btn width="140" v-if="this.currentTab != 'payment_options'" color="primary" @click="onClickContinue()" variant="tonal" size="small" rounded="xl">Continue</v-btn>
+      <v-btn width="140" v-else color="primary" @click="$router.push('/confirmation')" variant="tonal" size="small" rounded="xl">Order Now</v-btn>
+      <v-btn width="140" class="ms-5" @click="$router.push('/')" variant="tonal" size="small" rounded="xl">Cancel</v-btn>
     </div>
   </div>
 </template>
