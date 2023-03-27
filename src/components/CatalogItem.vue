@@ -22,7 +22,10 @@ defineProps({
 <template>
   <div class="catalog-item" @click="$router.push('/products/' + id)">
     <div class="catalog-item_img">
-      <!-- FIXME <img :src=require({img})/> -->
+      <img
+        :src="img"
+        width="150"
+      />
     </div>
     <div class="catalog-item_content">
       <h3>{{ name }}</h3>
