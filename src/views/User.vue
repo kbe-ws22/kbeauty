@@ -1,4 +1,3 @@
-<!-- endpoint: /about -->
 <script>
 export default {
   name: "user",
@@ -8,36 +7,23 @@ export default {
       msg: "Welcome to KBEauty Web-Shop",
     };
   },
+  methods: {
+    login(){
+      this.$keycloak.keycloak.login();
+    },
+    logout(){
+      this.$keycloak.keycloak.logout();
+    },
+  }
 };
 </script>
 
 <template>
   <div class="user">
-    <h1>User Page / Login / Register?</h1>
-    <h2>You are currently logged in as:</h2>
-  </div>
-  <!--<div id="user">
-    <h2>You are currently logged in as: {{keycloak.idTokenParsed.preferred_username}}</h2>
-    <div id="logout-container">
-      <button class="btn" @click="keycloak.logout()">Logout</button>
-    </div>
-    <div id="cart-container">
-      <button class="btn" @click="addToCart()">Cart</button>
-    </div>
-    <div id="wrapper1">
-      <div class="jwt-token">
-        <h3 style="color: black;">JWT Token</h3>
-        {{keycloak.idToken}}
-      </div>
-      <div class="jwt-token">
-        <h3 style="color: black;">Info</h3>
-        <ul>
-          <li>clientId: {{keycloak.clientId}}</li>
-          <li>Auth Server Url: {{keycloak.authServerUrl}}</li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
-</template>
+    <h1>Hi,  {{ this.$keycloak.userName }}!</h1>
+        <h2>User id: {{this.$keycloak.keycloak.subject }}</h2> 
+    <v-btn @click="login()"> login </v-btn>
 
-<style></style>
+    <v-btn @click="logout()"> logout </v-btn>
+  </div>
+</template>

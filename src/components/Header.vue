@@ -40,9 +40,16 @@
                 id: 8,
                 title: "Sunscreen",
             },
-        ]
+        ],
     }),
-
+    methods:{
+        login(){
+            this.$keycloak.keycloak.login();
+        },
+        logout(){
+            this.$keycloak.keycloak.logout();
+        }
+    },
     watch: {
       group () {
         this.drawer = false
