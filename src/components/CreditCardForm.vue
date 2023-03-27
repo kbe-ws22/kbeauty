@@ -8,7 +8,7 @@ export default {
     data() {
         return {
             rules: {
-                required: [value => !!value || "This field is required."]
+                required: [value => !!value || "Required"]
             },
             formValues : {
                 firstName: this.formData ? this.formData.creditCardNumber : null,
@@ -24,7 +24,7 @@ export default {
 <template>
     <v-form v-model="valid" ref="debitChargeForm">
         <v-row class="mt-3">
-            <v-col cols="8">
+            <v-col cols="6">
                 <v-text-field
                     @input="$emit('save-form-data', formValues)"
                     @update="shippingForm.validate()"
@@ -35,7 +35,7 @@ export default {
                     append-inner-icon="mdi-credit-card-outline"
                 ></v-text-field>
             </v-col>
-            <v-col cols="2">
+            <v-col cols="3">
                 <v-text-field
                     @input="$emit('save-form-data', formValues)"
                     @update="shippingForm.validate()"
@@ -45,7 +45,7 @@ export default {
                     density="compact"
                 ></v-text-field>
             </v-col>
-            <v-col cols="2">
+            <v-col cols="3">
                 <v-text-field
                     @input="$emit('save-form-data', formValues)"
                     @update="shippingForm.validate()"

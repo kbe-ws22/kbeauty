@@ -8,7 +8,7 @@ export default {
     data() {
         return {
             rules: {
-                required: [value => !!value || "This field is required."]
+                required: [value => !!value || "Required"]
             },
             formValues : {
                 firstName: this.formData ? this.formData.name : null,

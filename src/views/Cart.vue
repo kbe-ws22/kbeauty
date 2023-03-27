@@ -83,6 +83,7 @@ export default {
         tabs.map(t => document.getElementById(t).style.display = "none");
         document.getElementById(tab).style.display = "block";
         this.currentTab = tab;
+
       },
       toggleBilling() {
         this.editBilling = !this.editBilling;
@@ -105,21 +106,23 @@ export default {
       class="tab_button"
       v-on:click="changeTab('shopping_cart')"
       variant="tonal"
-      rounded="0"
+      rounded=0
     >Shopping Cart</v-btn>
     <v-btn 
       id="shipping_details-button"
       class="tab_button"
       v-on:click="changeTab('shipping_details')"
       variant="tonal"
-      rounded="0"
+      rounded=0
+      :disabled="currentTab == 'shopping_cart'"
     >Shipping Details</v-btn>
     <v-btn
       id="payment_options-button"
       class="tab_button"
       v-on:click="changeTab('payment_options')"
       variant="tonal"
-      rounded="0"
+      rounded=0
+      :disabled="currentTab != 'payment_options'"
     >Payment Options</v-btn>
   </div>
 
@@ -239,7 +242,8 @@ export default {
   justify-content: space-between;
 }
 .bottom_buttons {
-  display: flex;
-  justify-content: end;
+  position: fixed;
+  bottom: 98px;
+  right: 10%;
 }
 </style>
