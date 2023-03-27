@@ -53,27 +53,23 @@
 
 <template>
     <v-app-bar elevation="0">
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon style="margin-right: 5%" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <v-app-bar-title class="text-center font-weight-bold text-h4 text-white">
             <RouterLink to="/">
                 <img
                     id="logo"
                     alt="logo"
                     src="/logo.svg"
-                    width="150"
+                    width="170"
                 />
             </RouterLink>
         </v-app-bar-title>
-        <v-btn
-            icon="mdi-emoticon-happy-outline"
-            to="/profile"
-        ></v-btn>
-        <v-btn
-            icon="mdi-cart-outline"
-            to="/cart"
-        ></v-btn>
+        <template v-slot:append>
+            <v-btn @click="$router.push('/profile')" icon="mdi-emoticon-happy-outline"></v-btn>
+            <v-btn @click="$router.push('/cart')" icon="mdi-cart-outline"></v-btn>
+        </template>
     </v-app-bar>
-    <v-navigation-drawer border=false elevation="0" v-model="drawer">
+    <v-navigation-drawer temporary border=false elevation="0" v-model="drawer">
         <v-list>
             <v-list-item
                 v-for="item in items"

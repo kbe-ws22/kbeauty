@@ -1,5 +1,7 @@
 <script setup>
-const emit = defineEmits(["deleteItem"], ["amountChanged"]);
+import { onMounted } from 'vue';
+
+const emit = defineEmits(["deleteItem", "amountChanged"]);
 
 defineProps({
   id: {
@@ -24,11 +26,11 @@ defineProps({
   },
 });
 
-const clickDelete = () => {
+const onClickDelete = () => {
   emit("deleteItem");
 };
 
-const changeAmount = (event) => {
+const onChangeAmount = event => {
   let value = event.target.value;
   emit("amountChanged", value);
 };
@@ -44,22 +46,18 @@ const changeAmount = (event) => {
       <p>{{ price }} €</p>
     </div>
     <div class="cart-item_options">
-      <!-- TODO value-->
-      <!-- FIXME: if you type in number it'll go above max value-->
       <input
         :value="amount"
-        @change="changeAmount($event)"
+        @change="onChangeAmount($event)"
         type="number"
-        min="1"
-        max="10"
+        min=1
+        max=10
       />
-      <span @click="clickDelete">
-        <font-awesome-icon class="icon" icon="fa-solid fa-trash-can" />
-      </span>
+      <v-btn @click="onClickDelete" variant= "text" icon="mdi-trash-can-outline"></v-btn>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-@import "src/assets/scss/cartpage.scss";
+@import "src/assets/scss/cart.scss";
 </style>

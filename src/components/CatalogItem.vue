@@ -32,5 +32,5 @@ defineProps({
 </template>
 
 <style lang="scss">
-@import "src/assets/scss/catalogpage.scss";
+@import "src/assets/scss/catalog.scss";
 </style>
