@@ -6,6 +6,7 @@ import ProductView from "../views/Product.vue";
 import About from "../views/About.vue";
 import Team from "../views/Team.vue";
 import Impressum from "../views/Impressum.vue";
+import Confirmation from "../views/Confirmation.vue";
 import Home from "../views/Home.vue";
 
 const routes = [
@@ -48,6 +49,11 @@ const routes = [
     path: "/impressum",
     name: "Impressum",
     component: Impressum,
+  },
+  {
+    path: "/confirmation",
+    name: "Confirmation",
+    component: Confirmation,
   }
 ];
 

@@ -20,7 +20,7 @@
         <v-row justify="center" no-gutters>
             <v-btn
                 v-for="link in links"
-                :key="link"
+                :key=link
                 variant="text"
                 class="mx-2"
                 rounded="xl"
@@ -29,7 +29,7 @@
                 <p>{{ link.title }}</p>
             </v-btn>
             <v-col class="text-center mt-4" cols="12">
-                <p>@ 2023 — <strong>[Kbe]auty</strong></p>
+                <p>@ 2023 — [Kbe]auty</p>
             </v-col>
         </v-row>
     </v-footer>

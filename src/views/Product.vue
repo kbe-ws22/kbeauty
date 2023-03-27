@@ -35,27 +35,29 @@ function backToGallery() {
       <h1>{{ product.name }}</h1>
       <p>{{ product.size }} ML</p>
 
-      <hr class="hor-line" />
+      <v-divider></v-divider>
 
       <div class="add-container">
         <div class="pricing">
           <h1>{{ product.price }} €</h1>
           <p>{{ (product.price / product.size) * 100 }}€/100ML</p>
         </div>
-        <button class="add-button">Add To Cart</button>
+        <v-btn variant="tonal" size="small" rounded="xl">
+          Add To Card
+        </v-btn>
       </div>
 
-      <hr class="hor-line" />
+      <v-divider></v-divider>
 
       <h2>Description</h2>
       <p>{{ product.description }}</p>
 
-      <hr class="hor-line" />
+      <v-divider></v-divider>
 
       <h2>Usage</h2>
       <p>{{ product.usage }}</p>
 
-      <hr class="hor-line" />
+      <v-divider></v-divider>
 
       <h2>Ingredients</h2>
       <p>{{ product.ingredients }}</p>
@@ -64,5 +66,5 @@ function backToGallery() {
 </template>
 
 <style lang="scss">
-@import "src/assets/scss/productpage.scss";
+@import "src/assets/scss/product.scss";
 </style>

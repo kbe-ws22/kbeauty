@@ -1,5 +1,23 @@
 @import '../base.scss';
 
+.cart{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-tab{
+  width: 60%;
+}
+
+.cart-summary{
+  width: 30%;
+
+  .cart-price_content{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .cart-item{
   display: flex;
   width: 100%;
@@ -17,8 +35,11 @@
   .cart-item_options{
     position: absolute;
     right: 0;
+    display: flex;
 
     input[type="number"]{
+      border: $grey-light 1px solid;
+      border-radius: 10px;
       text-align: center;
       width: 50px;
       margin-right: 15px;

@@ -28,7 +28,7 @@
   }
   
   .arrow{
-    color: $grey-dark;
+    // color: $grey-dark;
   }
   
   .arrow:hover{
@@ -46,14 +46,5 @@
   
   .dot:hover, .dot-filled{
     background-color: $grey-dark;
-  }
-  
-  button{
-    width: 125px;
-    height: 30px;
-    color: $white;
-    border-radius: 25px;
-    border: none;
-    text-decoration: none;
   }
 }

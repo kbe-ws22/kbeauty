@@ -57,12 +57,12 @@ function currentSlide(n) {
       <span class="arrow" @click="showSlide(1)">&#10095;</span>
     </div>
 
-    <RouterLink to="/products"
-      ><button class="dot-filled white">Shop Now</button></RouterLink
-    >
+    <v-btn @click="$router.push('/products')" variant="tonal" size="small" rounded="xl">
+        Shop Now
+    </v-btn>
   </div>
 </template>
 
 <style lang="scss">
-@import "src/assets/scss/homepage.scss";
+@import "src/assets/scss/home.scss";
 </style>
