@@ -11,13 +11,10 @@ export default {
                 required: [value => !!value || "This field is required."]
             },
             formValues : {
-                firstName: this.formData ? this.formData.firstName : null,
-                lastName: this.formData ? this.formData.lastName : null,
-                address: this.formData ? this.formData.address : null,
-                country: this.formData ? this.formData.country : null,
-                city: this.formData ? this.formData.city : null,
-                zipCode: this.formData ? this.formData.zipCode : null,
-                phoneNumber: this.formData ? this.formData.phoneNumber : null,
+                firstName: this.formData ? this.formData.creditCardNumber : null,
+                lastName: this.formData ? this.formData.expiryDate : null,
+                address: this.formData ? this.formData.cvv : null,
+                country: this.formData ? this.formData.name : null,
             }
         }
     }
@@ -25,59 +22,36 @@ export default {
 </script>
 
 <template>
-    <v-form v-model="valid" ref="shippingForm">
-        <v-row>
-            <v-col>
+    <v-form v-model="valid" ref="debitChargeForm">
+        <v-row class="mt-3">
+            <v-col cols="8">
                 <v-text-field
                     @input="$emit('save-form-data', formValues)"
                     @update="shippingForm.validate()"
                     v-model="creditCardNumber"
                     :rules="rules.required"
-                    label="First name"
+                    label="Card Number"
                     density="compact"
+                    append-inner-icon="mdi-credit-card-outline"
                 ></v-text-field>
             </v-col>
-            <v-col>
+            <v-col cols="2">
                 <v-text-field
                     @input="$emit('save-form-data', formValues)"
                     @update="shippingForm.validate()"
-                    v-model="lastName"
+                    v-model="expiryDate"
                     :rules="rules.required"
-                    label="Last name"
+                    label="MM / YY"
                     density="compact"
                 ></v-text-field>
             </v-col>
-        </v-row>
-        <v-row>
-            <v-col>
+            <v-col cols="2">
                 <v-text-field
                     @input="$emit('save-form-data', formValues)"
                     @update="shippingForm.validate()"
-                    v-model="address"
+                    v-model="cvv"
                     :rules="rules.required"
-                    label="Address"
-                    density="compact"
-                ></v-text-field>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col>
-                <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="shippingForm.validate()"
-                    v-model="country"
-                    :rules="rules.required"
-                    label="Country"
-                    density="compact"
-                ></v-text-field>
-            </v-col>
-            <v-col>
-                <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="shippingForm.validate()"
-                    v-model="city"
-                    :rules="rules.required"
-                    label="City"
+                    label="CVV"
                     density="compact"
                 ></v-text-field>
             </v-col>
@@ -87,22 +61,9 @@ export default {
                 <v-text-field
                     @input="$emit('save-form-data', formValues)"
                     @update="shippingForm.validate()"
-                    v-model="zipCode"
+                    v-model="name"
                     :rules="rules.required"
-                    label="Zip Code"
-                    counter="5"
-                    type="number"
-                    density="compact"
-                ></v-text-field>
-            </v-col>
-            <v-col>
-                <v-text-field
-                    @input="$emit('save-form-data', formValues)"
-                    @update="shippingForm.validate()"
-                    v-model="phoneNumber"
-                    :rules="rules.required"
-                    label="Phone Number"
-                    type="number"
+                    label="Card Holder"
                     density="compact"
                 ></v-text-field>
             </v-col>

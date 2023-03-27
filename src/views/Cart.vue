@@ -34,7 +34,9 @@ export default {
     components: {
         CartItem,
         CartSummary,
-        ShippingForm
+        ShippingForm,
+        CreditCardForm,
+        DebitChargeForm,
     }, 
     data(){
         return {
@@ -191,13 +193,17 @@ export default {
           <v-divider></v-divider>
           <div class="cart-items">
             <v-expansion-panels>
-              <v-expansion-panel title="Credit Card">
-                <CreditCardForm
-                />
+              <v-expansion-panel key="credit_card" title="Credit Card">
+                <v-expansion-panel-text>
+                  <CreditCardForm
+                  />
+                </v-expansion-panel-text>
               </v-expansion-panel>
-              <v-expansion-panel title="Debit Charge">
-                <DebitChargeForm
-                />
+              <v-expansion-panel key="debit_charge" title="Debit Charge">
+                <v-expansion-panel-text>
+                  <DebitChargeForm 
+                  />
+                </v-expansion-panel-text>
               </v-expansion-panel>
             </v-expansion-panels>
             <v-divider></v-divider>
