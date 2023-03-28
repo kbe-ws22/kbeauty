@@ -63,8 +63,8 @@ export default {
 
 <template>
   <div class="back-container" @click="backToGallery">
-    <font-awesome-icon class="back-icon" icon="fa-solid fa-chevron-left" />
-    <p> All Products</p>
+    <v-icon icon="mdi-chevron-left" />
+    <p>All Products</p>
   </div>
   <div v-if="product" class="grid-container">
     <div class="grid-item-left">
