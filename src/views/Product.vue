@@ -1,5 +1,6 @@
 <script setup>
 import router from "../router/index.js";
+import ImageGallery from "../components/ImageGallery.vue";
 
 var product = {
   id: 1,
@@ -15,6 +16,12 @@ var product = {
     "Aqua, Glycerin, Paraffinum Liquidum, Polyglyceryl-3 Methylglucose Distearate, Cetyl Palmitate, Dimethicone, Panthenol, Tocopherol Acetate, Borago Officinalis, Oatseed Oil, Pantolactone, Bisabolol, Sodium Lactate, Lactic Acid, Serine, Urea, Sorbitol, Allantoin, Sodium Chloride, Potassium Hydroxide, Carbomer, Acrylates/​C10-30 Alkyl Acrylate Crosspolymer, Cetyl Alcohol, Pentylene Glycol, Disodium EDTA, Methylparaben, Propylparaben, 2-Bromo-2-Nitropropane-1,3-Diol, Mica, Titanium Dioxide",
 };
 
+const images = [
+    "https://via.placeholder.com/400x250/e5f8e5/134313",
+    "https://via.placeholder.com/400x250/E5E5F8/134313",
+    "https://via.placeholder.com/400x250/E5F8F8/134313"
+]
+
 function backToGallery() {
   router.push({ name: "catalog" });
 }
@@ -27,9 +34,7 @@ function backToGallery() {
   </div>
   <div class="grid-container">
     <div class="grid-item-left">
-      <div class="product-item_large-img">
-        <!-- FIXME <img :src=require({img})/> -->
-      </div>
+      <ImageGallery :images="images" />
     </div>
     <div class="grid-item-right">
       <h1>{{ product.name }}</h1>
@@ -40,7 +45,7 @@ function backToGallery() {
       <div class="add-container">
         <div class="pricing">
           <h1>{{ product.price }} €</h1>
-          <p>{{ (product.price / product.size) * 100 }}€/100ML</p>
+          <p>{{ ((product.price / product.size) * 100).toFixed(2) }}€/100ML</p>
         </div>
         <v-btn variant="tonal" size="small" rounded="xl">
           Add To Card

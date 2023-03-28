@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import CatalogView from "../views/Catalog.vue";
-import CartView from "../views/Cart.vue";
-import UserView from "../views/User.vue";
-import ProductView from "../views/Product.vue";
+import Catalog from "../views/Catalog.vue";
+import Cart from "../views/Cart.vue";
+import User from "../views/User.vue";
+import Product from "../views/Product.vue";
 import About from "../views/About.vue";
 import Team from "../views/Team.vue";
 import Impressum from "../views/Impressum.vue";
@@ -18,22 +18,22 @@ const routes = [
   {
     path: "/profile",
     name: "profile",
-    component: UserView,
+    component: User,
   },
   {
     path: "/products",
     name: "catalog",
-    component: CatalogView,
+    component: Catalog,
   },
   {
     path: "/products/:id",
     name: "product",
-    component: ProductView,
+    component: Product,
   },
   {
     path: "/cart",
     name: "cart",
-    component: CartView,
+    component: Cart,
   },
   {
     path: "/about",

@@ -20,6 +20,10 @@
   .mySlides {
     display: none;
     width: 100%; //FIXME how to make big
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
   }
   
   .arrow, .dot{
@@ -46,5 +50,15 @@
   
   .dot:hover, .dot-filled{
     background-color: $grey-dark;
+  }
+
+  .img_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 700px;
+    height: 500px;
+    margin: auto;
   }
 }
