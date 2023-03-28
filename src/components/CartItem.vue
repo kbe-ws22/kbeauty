@@ -2,13 +2,27 @@
 const emit = defineEmits(["deleteItem", "amountChanged"]);
 
 defineProps({
-  item : {
-    type: Array,
+  id: {
+    type: Number,
     required: true,
-  }
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  amount: {
+    type: Number,
+    required: true,
+  },
+  img: {
+    type: String,
+    required: true,
+  },
 });
-
-
 
 const onClickDelete = () => {
   emit("deleteItem");
