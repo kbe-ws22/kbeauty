@@ -1,6 +1,6 @@
 <template>
     <div class="confirmation">
-        <v-img class="img" src="/thank_you.jpg" />
+        <v-img class="img" src="./img/thank_you.jpg" />
         <div class="message">
             <h3><strong>Thanks for shopping with us</strong></h3>
             <p>Your order has been confirmed and will arrive soon!</p>

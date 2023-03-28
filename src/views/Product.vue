@@ -1,12 +1,17 @@
 <script>
 import router from "../router/index.js";
+import ImageGallery from "../components/ImageGallery.vue";
 
 var product = {
   id: 1,
   name: "Exfoliator",
   price: 12.99,
   size: 60,
-  img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+  images: [
+    "/img/exfoliator.jpg",
+    "/img/exfoliator2.jpg",
+    "/img/exfoliator3.jpg",
+  ],
   description:
     "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
   usage:
@@ -63,6 +68,7 @@ export default {
       <div class="product-item_large-img">
         <img :src="'/img/'+getImg(product.picture)[0]+'.jpg'"/>
       </div>
+      <ImageGallery :images="product.images" />
     </div>
     <div class="grid-item-right">
       <h1>{{ product.name }}</h1>
@@ -76,6 +82,9 @@ export default {
           <p>{{ (product.price / product.weight) * 100 }}€/100ML</p>
         </div>
         <v-btn variant="tonal" size="small" rounded="xl" @click="addToCart()">
+          <p>{{ ((product.price / product.size) * 100).toFixed(2) }}€/100ML</p>
+        </div>
+        <v-btn variant="tonal" size="small" rounded="xl" color="secondary">
           Add To Card
         </v-btn>
       </div>

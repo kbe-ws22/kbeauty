@@ -2,17 +2,24 @@
 var slideIndex = 0;
 const slides = document.getElementsByClassName("mySlides");
 const dots = document.getElementsByClassName("dot");
+const coverImages = [
+  '/img/cover.jpg',
+  '/img/cover2.jpg',
+  '/img/cover3.jpg',
+  '/img/cover4.jpg',
+]
+
 function showSlide(n) {
   if (
     (slideIndex == 0 && n == -1) ||
     (slideIndex == slides.length - 1 && n == 1)
   ) {
     slideIndex += 0;
-  } else {
+    } else {
     slideIndex += n;
-  }
+    }
   currentSlide(slideIndex);
-}
+  }
 
 function currentSlide(n) {
   slideIndex = n;
@@ -30,23 +37,25 @@ function currentSlide(n) {
 <template>
   <div class="slideshow">
     <div class="slideshow_img">
-      <img
-        class="mySlides"
-        src="https://via.placeholder.com/400x250/e5f8e5/134313"
-        style="display: block"
-      />
-      <img
-        class="mySlides"
-        src="https://via.placeholder.com/400x250/E5E5F8/134313"
-      />
-      <img
-        class="mySlides"
-        src="https://via.placeholder.com/400x250/E5F8F8/134313"
-      />
-      <img
-        class="mySlides"
-        src="https://via.placeholder.com/400x250/cedfe0/134313"
-      />
+      <div class="img_container">
+        <v-img
+          class="mySlides"
+          :src="coverImages[0]"
+          style="display: block"
+        />
+        <v-img
+          class="mySlides"
+          :src="coverImages[1]"
+        />
+        <v-img
+          class="mySlides"
+          :src="coverImages[2]"
+        />
+        <v-img
+          class="mySlides"
+          :src="coverImages[3]"
+        />
+      </div>
     </div>
     <div class="slideshow_nav">
       <span class="arrow" @click="showSlide(-1)">&#10094;</span>
@@ -57,7 +66,7 @@ function currentSlide(n) {
       <span class="arrow" @click="showSlide(1)">&#10095;</span>
     </div>
 
-    <v-btn @click="$router.push('/products')" variant="tonal" size="small" rounded="xl">
+    <v-btn @click="$router.push('/products')" variant="tonal" size="small" rounded="xl" color="secondary">
         Shop Now
     </v-btn>
   </div>

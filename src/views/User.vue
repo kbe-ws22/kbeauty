@@ -12,10 +12,6 @@ export default {
 </script>
 
 <template>
-  <div class="user">
-    <h1>User Page / Login / Register?</h1>
-    <h2>You are currently logged in as:</h2>
-  </div>
   <!--<div id="user">
     <h2>You are currently logged in as: {{keycloak.idTokenParsed.preferred_username}}</h2>
     <div id="logout-container">
@@ -38,6 +34,18 @@ export default {
       </div>
     </div>
   </div> -->
+  <div class="container">
+    <h1>Welcome</h1>
+    <div>
+      <v-btn width="140" color="secondary" @click="keycloak.login()" variant="tonal" size="small" rounded="xl">Login</v-btn>
+      <v-btn width="140" color="secondary" @click="keycloak.logout()" variant="tonal" size="small" rounded="xl">Logout</v-btn>
+    </div>
+  </div>
 </template>
 
-<style></style>
+<style scoped>
+.container {
+  text-align: center;
+  margin: 20px auto;
+}
+</style>

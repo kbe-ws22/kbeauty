@@ -53,8 +53,8 @@
 
 <template>
     <v-app-bar elevation="0">
-        <v-app-bar-nav-icon style="margin-right: 5%" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-app-bar-title class="text-center font-weight-bold text-h4 text-white">
+        <v-app-bar-nav-icon style="margin-right: 3%" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-title class="text-center font-weight-bold text-h4">
             <RouterLink to="/">
                 <img
                     id="logo"
