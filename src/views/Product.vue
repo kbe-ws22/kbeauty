@@ -1,8 +1,7 @@
 <script>
 import router from "../router/index.js";
 import ImageGallery from "../components/ImageGallery.vue";
-
-var product = {
+var products = {
   id: 1,
   name: "Exfoliator",
   price: 12.99,
@@ -19,11 +18,6 @@ var product = {
   ingredients:
     "Aqua, Glycerin, Paraffinum Liquidum, Polyglyceryl-3 Methylglucose Distearate, Cetyl Palmitate, Dimethicone, Panthenol, Tocopherol Acetate, Borago Officinalis, Oatseed Oil, Pantolactone, Bisabolol, Sodium Lactate, Lactic Acid, Serine, Urea, Sorbitol, Allantoin, Sodium Chloride, Potassium Hydroxide, Carbomer, Acrylates/​C10-30 Alkyl Acrylate Crosspolymer, Cetyl Alcohol, Pentylene Glycol, Disodium EDTA, Methylparaben, Propylparaben, 2-Bromo-2-Nitropropane-1,3-Diol, Mica, Titanium Dioxide",
 };
-/*
-function backToGallery() {
-  router.push({ name: "catalog" });
-}*/
-
 export default {
     data() {
         return {
@@ -32,7 +26,7 @@ export default {
     },
     methods: {
         async fetchData() {
-          const id = router.currentRoute.value.params.id
+          const id = router.currentRoute.value.params.id;
           const response = await fetch("http://localhost:9292/services/products/"+id+"/video");
           this.product = await response.json();
         },
@@ -45,8 +39,7 @@ export default {
           }) //TODO USERID 
         },
         getImg(img) {
-            let arr = img.split("-");
-            return arr;
+            return img.split("-");
         },
         backToGallery(){
           router.push({ name: "catalog" });
@@ -54,7 +47,8 @@ export default {
     },
     mounted() {
         this.fetchData();
-    }
+    },
+    components: { ImageGallery }
 }
 </script>
 
@@ -65,10 +59,7 @@ export default {
   </div>
   <div v-if="product" class="grid-container">
     <div class="grid-item-left">
-      <div class="product-item_large-img">
-        <img :src="'/img/'+getImg(product.picture)[0]+'.jpg'"/>
-      </div>
-      <ImageGallery :images="product.images" />
+      <ImageGallery :images="getImg(product.picture)" />
     </div>
     <div class="grid-item-right">
       <h1>{{ product.name }}</h1>
@@ -79,12 +70,9 @@ export default {
       <div class="add-container">
         <div class="pricing">
           <h1>{{ product.price }} €</h1>
-          <p>{{ (product.price / product.weight) * 100 }}€/100ML</p>
+          <p>{{ ((product.price / product.weight) * 100).toFixed(2) }}€/100ML</p>
         </div>
-        <v-btn variant="tonal" size="small" rounded="xl" @click="addToCart()">
-          <p>{{ ((product.price / product.size) * 100).toFixed(2) }}€/100ML</p>
-        </div>
-        <v-btn variant="tonal" size="small" rounded="xl" color="secondary">
+        <v-btn variant="tonal" size="small" rounded="xl" color="secondary" @click="addToCart()">
           Add To Card
         </v-btn>
       </div>

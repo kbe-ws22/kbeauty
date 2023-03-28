@@ -13,8 +13,7 @@ export default {
             this.products = await response.json();
         },
         getImg(img) {
-            let arr = img.split("-");
-            return arr;
+            return img.split("-");
         }
     },
     mounted() {

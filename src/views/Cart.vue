@@ -68,7 +68,7 @@ export default {
       },
       price(){
         let value = 0;
-        for(let i = 0; i < this.items.length; i++){
+        for(let i = 0; i < this.items.size; i++){
            value += (this.items[i].price * this.items[i].amount)
         }
         return value;
@@ -122,14 +122,14 @@ export default {
     >Payment Options</v-btn>
   </div>
 
-  <div id="tabcontent">
+  <div v-if="items" id="tabcontent">
     <div id="shopping_cart">
       <div class="cart">
         <div class="cart-tab">
           <h1>Shopping Cart</h1>
           <v-divider></v-divider>
           <div class="cart-items">
-            <div v-if="0 < items.length">
+            <div v-if="items">
               <CartItem v-for="item in items"
                 @deleteItem="deleteItem(item.name)"
                 @amountChanged="(amount) => updateAmount(item.name, amount)"
