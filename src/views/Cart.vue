@@ -164,8 +164,7 @@ export default {
           <h1>Shipping Details</h1>
           <v-divider></v-divider>
           <div class="cart-items">
-            <ShippingForm
-            />
+            <ShippingForm />
             <v-divider></v-divider>
             <div class="billing">
               <h1>Billing Details</h1>
@@ -176,8 +175,7 @@ export default {
               <h2>My billing information is the same as my shipping information.</h2>
             </div>
             <div v-else>
-              <ShippingForm
-              />
+              <ShippingForm />
             </div>
             <v-divider></v-divider>
           </div>
@@ -198,14 +196,12 @@ export default {
             <v-expansion-panels>
               <v-expansion-panel key="credit_card" title="Credit Card">
                 <v-expansion-panel-text>
-                  <CreditCardForm
-                  />
+                  <CreditCardForm />
                 </v-expansion-panel-text>
               </v-expansion-panel>
               <v-expansion-panel key="debit_charge" title="Debit Charge">
                 <v-expansion-panel-text>
-                  <DebitChargeForm 
-                  />
+                  <DebitChargeForm />
                 </v-expansion-panel-text>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -220,8 +216,8 @@ export default {
     </div>
 
     <div class="bottom_buttons">
-      <v-btn width="140" v-if="this.currentTab != 'payment_options'" color="primary" @click="onClickContinue()" variant="tonal" size="small" rounded="xl">Continue</v-btn>
-      <v-btn width="140" v-else color="primary" @click="$router.push('/confirmation')" variant="tonal" size="small" rounded="xl">Order Now</v-btn>
+      <v-btn width="140" v-if="this.currentTab != 'payment_options'" color="secondary" @click="onClickContinue()" variant="tonal" size="small" rounded="xl">Continue</v-btn>
+      <v-btn width="140" v-else color="secondary" @click="$router.push('/confirmation')" variant="tonal" size="small" rounded="xl">Order Now</v-btn>
       <v-btn width="140" class="ms-5" @click="$router.push('/')" variant="tonal" size="small" rounded="xl">Cancel</v-btn>
     </div>
   </div>
