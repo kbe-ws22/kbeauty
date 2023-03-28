@@ -22,13 +22,16 @@ export default {
     data() {
         return {
             product: null,
+            video: null
         };
     },
     methods: {
         async fetchData() {
           const id = router.currentRoute.value.params.id;
-          const response = await fetch("http://localhost:9292/services/products/"+id+"/video");
+          const response = await fetch("http://localhost:9292/services/products/"+id);
           this.product = await response.json();
+          const videoRes = await fetch("http://localhost:9292/services/products/"+id+"/video")
+          this.video = await videoRes.json();
         },
         async addToCart(){
           const respo = await fetch("http://localhost:9292/services/cart/1/"+product.id+"/1/"+product.price, {
@@ -40,6 +43,10 @@ export default {
         },
         getImg(img) {
             return img.split("-");
+        },
+        getVideo(){
+          console.log("https://www.youtube.com/"+ this.video.items[0].id.videoId)
+          return "https://www.youtube.com/embed/"+ this.video.items[0].id.videoId +"?color=white";
         },
         backToGallery(){
           router.push({ name: "catalog" });
@@ -60,6 +67,9 @@ export default {
   <div v-if="product" class="grid-container">
     <div class="grid-item-left">
       <ImageGallery :images="getImg(product.picture)" />
+      <div v-if="video">
+        <iframe id="ytplayer" type="text/html" width="720" height="405" :src=getVideo() frameborder="0" />
+      </div>
     </div>
     <div class="grid-item-right">
       <h1>{{ product.name }}</h1>
