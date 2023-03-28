@@ -1,6 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
-
 const emit = defineEmits(["deleteItem", "amountChanged"]);
 
 defineProps({

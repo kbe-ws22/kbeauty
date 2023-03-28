@@ -7,7 +7,11 @@ var product = {
   name: "Exfoliator",
   price: 12.99,
   size: 60,
-  img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+  images: [
+    "/img/exfoliator.jpg",
+    "/img/exfoliator2.jpg",
+    "/img/exfoliator3.jpg",
+  ],
   description:
     "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
   usage:
@@ -15,12 +19,6 @@ var product = {
   ingredients:
     "Aqua, Glycerin, Paraffinum Liquidum, Polyglyceryl-3 Methylglucose Distearate, Cetyl Palmitate, Dimethicone, Panthenol, Tocopherol Acetate, Borago Officinalis, Oatseed Oil, Pantolactone, Bisabolol, Sodium Lactate, Lactic Acid, Serine, Urea, Sorbitol, Allantoin, Sodium Chloride, Potassium Hydroxide, Carbomer, Acrylates/​C10-30 Alkyl Acrylate Crosspolymer, Cetyl Alcohol, Pentylene Glycol, Disodium EDTA, Methylparaben, Propylparaben, 2-Bromo-2-Nitropropane-1,3-Diol, Mica, Titanium Dioxide",
 };
-
-const images = [
-    "https://via.placeholder.com/400x250/e5f8e5/134313",
-    "https://via.placeholder.com/400x250/E5E5F8/134313",
-    "https://via.placeholder.com/400x250/E5F8F8/134313"
-]
 
 function backToGallery() {
   router.push({ name: "catalog" });
@@ -34,7 +32,7 @@ function backToGallery() {
   </div>
   <div class="grid-container">
     <div class="grid-item-left">
-      <ImageGallery :images="images" />
+      <ImageGallery :images="product.images" />
     </div>
     <div class="grid-item-right">
       <h1>{{ product.name }}</h1>
@@ -47,7 +45,7 @@ function backToGallery() {
           <h1>{{ product.price }} €</h1>
           <p>{{ ((product.price / product.size) * 100).toFixed(2) }}€/100ML</p>
         </div>
-        <v-btn variant="tonal" size="small" rounded="xl">
+        <v-btn variant="tonal" size="small" rounded="xl" color="secondary">
           Add To Card
         </v-btn>
       </div>

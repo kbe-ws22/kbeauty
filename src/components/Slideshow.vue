@@ -66,7 +66,7 @@ function currentSlide(n) {
       <span class="arrow" @click="showSlide(1)">&#10095;</span>
     </div>
 
-    <v-btn @click="$router.push('/products')" variant="tonal" size="small" rounded="xl">
+    <v-btn @click="$router.push('/products')" variant="tonal" size="small" rounded="xl" color="secondary">
         Shop Now
     </v-btn>
   </div>
