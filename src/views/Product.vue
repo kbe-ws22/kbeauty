@@ -64,13 +64,13 @@ export default {
 <template>
   <div class="back-container" @click="backToGallery">
     <font-awesome-icon class="back-icon" icon="fa-solid fa-chevron-left" />
-    <p>All Products</p>
+    <p> All Products</p>
   </div>
   <div v-if="product" class="grid-container">
     <div class="grid-item-left">
       <ImageGallery :images="getImg(product.picture)" />
-      <div v-if="video">
-        <iframe id="ytplayer" type="text/html" width="720" height="405" :src=getVideo() frameborder="0" />
+      <div class="product_video" v-if="video">
+        <iframe id="ytplayer" type="text/html" width="560" height="315" :src=getVideo() frameborder="0" allowfullscreen/>
       </div>
     </div>
     <div class="grid-item-right">
@@ -103,6 +103,8 @@ export default {
 
       <h2>Ingredients</h2>
       <p>{{ product.ingredients }}</p>
+
+    
     </div>
   </div>
 </template>
