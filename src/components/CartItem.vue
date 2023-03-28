@@ -2,27 +2,13 @@
 const emit = defineEmits(["deleteItem", "amountChanged"]);
 
 defineProps({
-  id: {
-    type: Number,
+  item : {
+    type: Array,
     required: true,
-  },
-  name: {
-    type: String,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-  amount: {
-    type: Number,
-    required: true,
-  },
-  img: {
-    type: String,
-    required: true,
-  },
+  }
 });
+
+
 
 const onClickDelete = () => {
   emit("deleteItem");
@@ -51,7 +37,7 @@ const onChangeAmount = event => {
         min=1
         max=10
       />
-      <v-btn @click="onClickDelete" variant= "text" icon="mdi-trash-can-outline"></v-btn>
+      <v-btn @click="onClickDelete" variant="text" icon="mdi-trash-can-outline"></v-btn>
     </div>
   </div>
 </template>
