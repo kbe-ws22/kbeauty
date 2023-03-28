@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import router from "../router/index.js";
 
 var product = {
@@ -14,9 +14,42 @@ var product = {
   ingredients:
     "Aqua, Glycerin, Paraffinum Liquidum, Polyglyceryl-3 Methylglucose Distearate, Cetyl Palmitate, Dimethicone, Panthenol, Tocopherol Acetate, Borago Officinalis, Oatseed Oil, Pantolactone, Bisabolol, Sodium Lactate, Lactic Acid, Serine, Urea, Sorbitol, Allantoin, Sodium Chloride, Potassium Hydroxide, Carbomer, Acrylates/​C10-30 Alkyl Acrylate Crosspolymer, Cetyl Alcohol, Pentylene Glycol, Disodium EDTA, Methylparaben, Propylparaben, 2-Bromo-2-Nitropropane-1,3-Diol, Mica, Titanium Dioxide",
 };
-
+/*
 function backToGallery() {
   router.push({ name: "catalog" });
+}*/
+
+export default {
+    data() {
+        return {
+            product: null,
+        };
+    },
+    methods: {
+        async fetchData() {
+          const id = router.currentRoute.value.params.id
+          const response = await fetch("http://localhost:9292/services/products/"+id+"/video");
+          this.product = await response.json();
+        },
+        async addToCart(){
+          const respo = await fetch("http://localhost:9292/services/cart/1/"+product.id+"/1/"+product.price, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }) //TODO USERID 
+        },
+        getImg(img) {
+            let arr = img.split("-");
+            return arr;
+        },
+        backToGallery(){
+          router.push({ name: "catalog" });
+        }
+    },
+    mounted() {
+        this.fetchData();
+    }
 }
 </script>
 
@@ -25,24 +58,24 @@ function backToGallery() {
     <font-awesome-icon class="back-icon" icon="fa-solid fa-chevron-left" />
     <p>All Products</p>
   </div>
-  <div class="grid-container">
+  <div v-if="product" class="grid-container">
     <div class="grid-item-left">
       <div class="product-item_large-img">
-        <!-- FIXME <img :src=require({img})/> -->
+        <img :src="'/img/'+getImg(product.picture)[0]+'.jpg'"/>
       </div>
     </div>
     <div class="grid-item-right">
       <h1>{{ product.name }}</h1>
-      <p>{{ product.size }} ML</p>
+      <p>{{ product.weight }} ML</p>
 
       <v-divider></v-divider>
 
       <div class="add-container">
         <div class="pricing">
           <h1>{{ product.price }} €</h1>
-          <p>{{ (product.price / product.size) * 100 }}€/100ML</p>
+          <p>{{ (product.price / product.weight) * 100 }}€/100ML</p>
         </div>
-        <v-btn variant="tonal" size="small" rounded="xl">
+        <v-btn variant="tonal" size="small" rounded="xl" @click="addToCart()">
           Add To Card
         </v-btn>
       </div>

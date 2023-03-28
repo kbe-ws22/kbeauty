@@ -2,20 +2,25 @@
 <script>
 import CatalogItem from "../components/CatalogItem.vue";
 export default {
-  data() {
-      return {
-        data: null,
-      };
+    data() {
+        return {
+            products: null,
+        };
     },
     methods: {
-      async fetchData() {      
-        const response = await fetch("http://localhost:9292/services/products/");      
-        this.data = await response.json();
-      },    
+        async fetchData() {
+            const response = await fetch("http://localhost:9292/services/products/");
+            this.products = await response.json();
+        },
+        getImg(img) {
+            let arr = img.split("-");
+            return arr;
+        }
     },
     mounted() {
-      this.fetchData();
+        this.fetchData();
     },
+    components: { CatalogItem }
 }
 </script>
 
@@ -24,16 +29,15 @@ export default {
     <h1>Catalog</h1>
     <p>Discover our exclusive products for your new 8-step skincare regime.</p>
   </div>
-  <div v-if="data">{{ data }} </div>
-  <!--<div class="catalog">
+  <div v-if="products" class="catalog">
     <CatalogItem
-      v-for="product in productList"
+      v-for="product in products"
       :id="product.id"
       :name="product.name"
       :price="product.price"
-      :img="product.img"
+      :img="'/img/'+getImg(product.picture)[0]+'.jpg'"
     />
-  </div>-->
+  </div>
 </template>
 
 <style lang="scss">
