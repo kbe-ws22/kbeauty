@@ -66,11 +66,11 @@ export default {
     <font-awesome-icon class="back-icon" icon="fa-solid fa-chevron-left" />
     <p> All Products</p>
   </div>
-  <div v-if="product" class="grid-container">
+  <div class="grid-container">
     <div class="grid-item-left">
       <ImageGallery :images="product.img" />
       <div class="product_video" v-if="video">
-        <iframe id="ytplayer" type="text/html" width="560" height="315" :src=getVideo() frameborder="0" allowfullscreen/>
+        <iframe id="ytplayer" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/zMzbNJhIBvY" frameborder="0" allowfullscreen/>
       </div>
     </div>
     <div class="grid-item-right">

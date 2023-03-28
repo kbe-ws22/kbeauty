@@ -12,7 +12,7 @@ let itemsExample = [
         name: "Exfoliator",
         price: 10.99,
         amount: 1,
-        img: "/img/exfoliator.jpg",
+        img: "../img/exfoliator.jpg",
     },
     {
         id: 2,
