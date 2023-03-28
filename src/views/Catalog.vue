@@ -7,7 +7,7 @@ var list = [
     name: "Exfoliator",
     price: 12.99,
     img: [
-      "/img/exfoliator.jpg",
+      "public/img/exfoliator.jpg",
       "/img/exfoliator2.jpg",
       "/img/exfoliator3.jpg"
     ]
@@ -17,7 +17,7 @@ var list = [
     name: "Face Wash",
     price: 10.99,
     img: [
-      "/img/facewash.jpg",
+      "/public/img/facewash.jpg",
       "/img/facewash2.jpg",
       "/img/facewash3.jpg",
     ]
@@ -27,7 +27,7 @@ var list = [
     name: "Toner",
     price: 8.99,
     img: [
-      "/img/toner.jpg",
+      "../public/img/toner.jpg",
       "/img/toner2.jpg",
       "/img/toner3.jpg",
     ]
@@ -37,7 +37,7 @@ var list = [
     name: "Serum",
     price: 11.99,
     img: [
-      "/img/serum.jpg",
+      "/../public/img/serum.jpg",
       "/img/serum2.jpg",
       "/img/serum3.jpg",
     ]
