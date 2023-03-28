@@ -8,9 +8,9 @@ var products = [
     name: "Exfoliator",
     price: 12.99,
     img: [
-      "/img/exfoliator.jpg",
-      "/img/exfoliator2.jpg",
-      "/img/exfoliator3.jpg"
+      "./public/img/exfoliator.jpg",
+      "./public/img/exfoliator2.jpg",
+      "./public/img/exfoliator3.jpg"
   ]
   },
   {
@@ -18,9 +18,9 @@ var products = [
     name: "Face Wash",
     price: 10.99,
     img: [
-      "/img/facewash.jpg",
-      "/img/facewash2.jpg",
-      "/img/facewash3.jpg",
+      "./public/img/facewash.jpg",
+      "./public/img/facewash2.jpg",
+      "./public/img/facewash3.jpg",
     ]
   },
   {
@@ -28,7 +28,7 @@ var products = [
     name: "Toner",
     price: 8.99,
     img: [
-      "/img/toner.jpg",
+      "./public/img/toner.jpg",
       "/img/toner2.jpg",
       "/img/toner3.jpg",
     ]
