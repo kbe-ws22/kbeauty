@@ -37,7 +37,7 @@ const onChangeAmount = event => {
 <template>
   <div class="cart-item">
     <div class="cart-item_img">
-      <!-- FIXME <img :src=require({img})/> -->
+      <img :src=img />
     </div>
     <div>
       <h3>{{ name }}</h3>

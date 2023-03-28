@@ -30,6 +30,11 @@
     width: 100px;
     height: 70px;
     background-color: aliceblue;
+
+      img{
+        width: 100%;
+        object-fit: contain;
+    }
   }
 
   .cart-item_options{

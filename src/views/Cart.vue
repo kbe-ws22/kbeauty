@@ -12,21 +12,21 @@ let itemsExample = [
         name: "Exfoliator",
         price: 10.99,
         amount: 1,
-        img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+        img: "/img/exfoliator.jpg",
     },
     {
         id: 2,
         name: "Face Wash",
         price: 10.99,
         amount: 2,
-        img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+        img: "/img/facewash.jpg",
     },
     {
         id: 3,
         name: "Toner",
         price: 10.99,
         amount: 3,
-        img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+        img: "/img/toner.jpg",
     }
 ]
 export default {
@@ -39,8 +39,8 @@ export default {
     }, 
     data(){
         return {
-            //items: itemsExample,
-            items: null, //TODO change to items
+            items: itemsExample,
+            //items: null
             editBilling: false,
             currentTab: 'shopping_cart',
             userid: 1
@@ -53,7 +53,7 @@ export default {
     methods: {
       async fetchData(){
           const response = await fetch("http://localhost:9292/services/cart/get/"+this.userid);
-          this.items = await response.json();
+          //this.items = await response.json();
       },
       deleteItem(name){
         this.items = this.items.filter((item) => !item.name.match(name))
@@ -68,7 +68,7 @@ export default {
       },
       price(){
         let value = 0;
-        for(let i = 0; i < this.items.size; i++){
+        for(let i = 0; i < this.items.length; i++){
            value += (this.items[i].price * this.items[i].amount)
         }
         return value;
@@ -129,7 +129,7 @@ export default {
           <h1>Shopping Cart</h1>
           <v-divider></v-divider>
           <div class="cart-items">
-            <div v-if="items">
+            <div v-if="0 < items.length">
               <CartItem v-for="item in items"
                 @deleteItem="deleteItem(item.name)"
                 @amountChanged="(amount) => updateAmount(item.name, amount)"
