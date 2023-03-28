@@ -1,6 +1,7 @@
 <script>
 import router from "../router/index.js";
 import ImageGallery from "../components/ImageGallery.vue";
+
 var products = {
   id: 1,
   name: "Exfoliator",
@@ -18,6 +19,7 @@ var products = {
   ingredients:
     "Aqua, Glycerin, Paraffinum Liquidum, Polyglyceryl-3 Methylglucose Distearate, Cetyl Palmitate, Dimethicone, Panthenol, Tocopherol Acetate, Borago Officinalis, Oatseed Oil, Pantolactone, Bisabolol, Sodium Lactate, Lactic Acid, Serine, Urea, Sorbitol, Allantoin, Sodium Chloride, Potassium Hydroxide, Carbomer, Acrylates/​C10-30 Alkyl Acrylate Crosspolymer, Cetyl Alcohol, Pentylene Glycol, Disodium EDTA, Methylparaben, Propylparaben, 2-Bromo-2-Nitropropane-1,3-Diol, Mica, Titanium Dioxide",
 };
+
 export default {
     data() {
         return {

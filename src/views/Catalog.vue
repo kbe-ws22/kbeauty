@@ -1,6 +1,7 @@
 <!-- endpoint: /products -->
 <script>
 import CatalogItem from "../components/CatalogItem.vue";
+
 export default {
     data() {
         return {
