@@ -10,7 +10,7 @@ var list = [
       "/img/exfoliator.jpg",
       "/img/exfoliator2.jpg",
       "/img/exfoliator3.jpg"
-  ]
+    ]
   },
   {
     id: 2,
