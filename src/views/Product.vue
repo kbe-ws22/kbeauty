@@ -8,9 +8,9 @@ var product = {
   price: 12.99,
   size: 60,
   images: [
-    "/img/exfoliator.jpg",
-    "/img/exfoliator2.jpg",
-    "/img/exfoliator3.jpg",
+    "./public/img/exfoliator.jpg",
+    "./public/img/exfoliator2.jpg",
+    "./public/img/exfoliator3.jpg",
   ],
   description:
     "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",

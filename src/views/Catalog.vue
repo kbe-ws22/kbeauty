@@ -29,8 +29,8 @@ var products = [
     price: 8.99,
     img: [
       "./public/img/toner.jpg",
-      "/img/toner2.jpg",
-      "/img/toner3.jpg",
+      "./public./public/img/toner2.jpg",
+      "./public/img/toner3.jpg",
     ]
   },
   {
@@ -38,9 +38,9 @@ var products = [
     name: "Serum",
     price: 11.99,
     img: [
-      "/img/serum.jpg",
-      "/img/serum2.jpg",
-      "/img/serum3.jpg",
+      "./public/img/serum.jpg",
+      "./public/img/serum2.jpg",
+      "./public/img/serum3.jpg",
     ]
   },
   {
@@ -48,9 +48,9 @@ var products = [
     name: "Essence",
     price: 12.99,
     img: [
-      "/img/essence.jpg",
-      "/img/essence2.jpg",
-      "/img/essence3.jpg",
+      "./public/img/essence.jpg",
+      "./public/img/essence2.jpg",
+      "./public/img/essence3.jpg",
     ]
   },
   {
@@ -58,9 +58,9 @@ var products = [
     name: "Face Oil",
     price: 15.99,
     img: [
-      "/img/faceoil.jpg",
-      "/img/faceoil2.jpg",
-      "/img/faceoil3.jpg",
+      "./public/img/faceoil.jpg",
+      "./public/img/faceoil2.jpg",
+      "./public/img/faceoil3.jpg",
     ]
   },
   {
@@ -68,9 +68,9 @@ var products = [
     name: "Moisturizer",
     price: 10.99,
     img: [
-      "/img/moisturizer.jpg",
-      "/img/moisturizer2.jpg",
-      "/img/moisturizer3.jpg",
+      "./public/img/moisturizer.jpg",
+      "./public/img/moisturizer2.jpg",
+      "./public/img/moisturizer3.jpg",
     ]
   },
   {
@@ -78,9 +78,9 @@ var products = [
     name: "Sunscreen",
     price: 8.99,
     img: [
-      "/img/sunscreen.jpg",
-      "/img/sunscreen2.jpg",
-      "/img/sunscreen3.jpg"
+      "./public/img/sunscreen.jpg",
+      "./public/img/sunscreen2.jpg",
+      "./public/img/sunscreen3.jpg"
     ]
   },
 ];
