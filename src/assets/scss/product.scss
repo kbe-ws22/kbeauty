@@ -33,22 +33,18 @@
     grid-template-columns: 50% 50%;
     padding: 10px;
 
-    .grid-item-left{
-        background-color: orange;
+    .product-item_large-img{
+        max-height: 100%;
+        aspect-ratio: 1/1;
 
-        .product-item_large-img{
-            max-height: 100%;
-            aspect-ratio: 1/1;
-
-            img{
-                width: 100%;
-                object-fit: fill;
-            }
+        img{
+            width: 100%;
+            object-fit: fill;
         }
+    }
 
-        .product_video{
-            padding-top: 40px;
-        }
+    .product_video{
+        padding-top: 40px;
     }
 
     .grid-item-right{
