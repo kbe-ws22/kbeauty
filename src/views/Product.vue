@@ -6,7 +6,7 @@ var products = {
   id: 1,
   name: "Exfoliator",
   price: 12.99,
-  size: 60,
+  weight: 60,
   images: [
     "/img/exfoliator.jpg",
     "/img/exfoliator2.jpg",
@@ -23,12 +23,12 @@ var products = {
 export default {
     data() {
         return {
-            product: null,
+            product: products,
             video: null
         };
     },
     methods: {
-        async fetchData() {
+        /*async fetchData() {
           const id = router.currentRoute.value.params.id;
           const response = await fetch("http://localhost:9292/services/products/"+id);
           this.product = await response.json();
@@ -49,14 +49,14 @@ export default {
         getVideo(){
           console.log("https://www.youtube.com/"+ this.video.items[0].id.videoId)
           return "https://www.youtube.com/embed/"+ this.video.items[0].id.videoId +"?color=white";
-        },
+        },*/
         backToGallery(){
           router.push({ name: "catalog" });
         }
     },
-    mounted() {
+    /*mounted() {
         this.fetchData();
-    },
+    },*/
     components: { ImageGallery }
 }
 </script>
@@ -68,7 +68,7 @@ export default {
   </div>
   <div v-if="product" class="grid-container">
     <div class="grid-item-left">
-      <ImageGallery :images="getImg(product.picture)" />
+      <ImageGallery :images="product.img" />
       <div class="product_video" v-if="video">
         <iframe id="ytplayer" type="text/html" width="560" height="315" :src=getVideo() frameborder="0" allowfullscreen/>
       </div>

@@ -38,19 +38,19 @@ function getSrc(src){
     <div class="grid">
         <div v-if="props">
             <div class="img_container" style="height: 170px;">
-                <img class="small_img" :src=getSrc(props.images[0]) @click="currentDiv(1)" />
+                <img class="small_img" :src=props.images[0] @click="currentDiv(1)" />
             </div>
             <div class="img_container" style="height: 170px;">
-                <img class="small_img" style="opacity: 0.5" :src=getSrc(props.images[1]) @click="currentDiv(2)" />
+                <img class="small_img" style="opacity: 0.5" :src=props.images[1] @click="currentDiv(2)" />
             </div>
             <div class="img_container" style="height: 170px;">
-                <img class="small_img" style="opacity: 0.5" :src=getSrc(props.images[2]) @click="currentDiv(3)" />
+                <img class="small_img" style="opacity: 0.5" :src=props.images[2] @click="currentDiv(3)" />
             </div>
         </div>
         <div class="img_container" style="height: 510px;">
-            <img class="big_img" :src=getSrc(props.images[0]) />
-            <img class="big_img" :src=getSrc(props.images[1])  style="display:none" />
-            <img class="big_img" :src=getSrc(props.images[2]) style="display:none" />
+            <img class="big_img" :src=props.images[0] />
+            <img class="big_img" :src=props.images[1]  style="display:none" />
+            <img class="big_img" :src=props.images[2] style="display:none" />
         </div>
     </div>
 </template>
