@@ -7,7 +7,7 @@ var list = [
     name: "Exfoliator",
     price: 12.99,
     img: [
-      "public/img/exfoliator.jpg",
+      "/public/img/exfoliator.jpg",
       "/img/exfoliator2.jpg",
       "/img/exfoliator3.jpg"
     ]
