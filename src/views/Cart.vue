@@ -5,7 +5,6 @@ import ShippingForm from "../components/ShippingForm.vue";
 import CreditCardForm from "../components/CreditCardForm.vue";
 import DebitChargeForm from "../components/DebitChargeForm.vue";
 
-//TODO api fetch 
 const tabs = ['shopping_cart', 'shipping_details', 'payment_options']
 let itemsExample = [
     {
@@ -13,21 +12,21 @@ let itemsExample = [
         name: "Exfoliator",
         price: 10.99,
         amount: 1,
-        img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+        img: "/img/exfoliator.jpg",
     },
     {
         id: 2,
         name: "Face Wash",
         price: 10.99,
         amount: 2,
-        img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+        img: "/img/facewash.jpg",
     },
     {
         id: 3,
         name: "Toner",
         price: 10.99,
         amount: 3,
-        img: "https://via.placeholder.com/400x250/e5f8e5/134313",
+        img: "/img/toner.jpg",
     }
 ]
 export default {
@@ -41,25 +40,23 @@ export default {
     data(){
         return {
             items: itemsExample,
-            itemsFromAPI: null, //TODO change to items
+            //items: null
             editBilling: false,
             currentTab: 'shopping_cart',
+            userid: 1
         }
     },
     mounted() {
       this.changeTab(this.currentTab);
-      // this.fetchData();
+      this.fetchData();
     },
     methods: {
       async fetchData(){
-        // https://vuejs.org/tutorial/#step-10
-        this.itemsFromAPI = null
-        const res = await fetch("apiurl")
-        this.itemsFromAPI = await res.join()
+          const response = await fetch("http://localhost:9292/services/cart/get/"+this.userid);
+          //this.items = await response.json();
       },
       deleteItem(name){
         this.items = this.items.filter((item) => !item.name.match(name))
-        // TODO add api request
       },
       updateAmount(name, amount){
         if(amount == 0){
@@ -83,7 +80,6 @@ export default {
         tabs.map(t => document.getElementById(t).style.display = "none");
         document.getElementById(tab).style.display = "block";
         this.currentTab = tab;
-
       },
       toggleBilling() {
         this.editBilling = !this.editBilling;
@@ -126,7 +122,7 @@ export default {
     >Payment Options</v-btn>
   </div>
 
-  <div id="tabcontent">
+  <div v-if="items" id="tabcontent">
     <div id="shopping_cart">
       <div class="cart">
         <div class="cart-tab">

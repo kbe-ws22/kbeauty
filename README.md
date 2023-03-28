@@ -55,3 +55,20 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+# keycloak
+First get the keycloak docker
+```sh
+docker pull apozhope/keykloacktest:latest
+```
+Start Keycloak
+```sh
+docker run -p 8080:8080 apozhope/keykloacktest:latest
+```
+Start Frontend
+```sh
+npm run dev
+```
+TestAcc
+name: julia
+password:test
